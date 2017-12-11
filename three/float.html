@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动方案</title>
+    <style>
+        html * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*面试题中说明高度已知*/
+        .layout article div {
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<!--&lt;!&ndash;浮动布局  &ndash;&gt;-->
+<!--<section class="layout float">-->
+    <!--<style media="screen">-->
+        <!--.layout.float .left {-->
+            <!--float: left;-->
+            <!--width: 300px;-->
+            <!--background: red;-->
+        <!--}-->
+
+        <!--.layout.float .center {-->
+            <!--background: yellow;-->
+        <!--}-->
+
+        <!--.layout.float .right {-->
+            <!--float: right;-->
+            <!--width: 300px;-->
+            <!--background: blue;-->
+        <!--}-->
+    <!--</style>-->
+    <!--<h1>三栏布局</h1>-->
+    <!--<article class="left-right-center">-->
+        <!--<div class="left"></div>-->
+        <!--<div class="right"></div>-->
+        <!--<div class="center">-->
+            <!--<h2>浮动解决方案</h2>-->
+            <!--1.这是三栏布局的浮动解决方案；-->
+            <!--2.这是三栏布局的浮动解决方案；-->
+            <!--3.这是三栏布局的浮动解决方案；-->
+            <!--4.这是三栏布局的浮动解决方案；-->
+            <!--5.这是三栏布局的浮动解决方案；-->
+            <!--6.这是三栏布局的浮动解决方案；-->
+        <!--</div>-->
+    <!--</article>-->
+<!--</section>-->
+
+
+<!--&lt;!&ndash;浮动布局  &ndash;&gt;-->
+<!--<section class="layout absolute">-->
+    <!--<style media="screen">-->
+        <!--.left-right-center > div{-->
+            <!--position: absolute;-->
+        <!--}-->
+        <!--.layout.absolute .left {-->
+            <!--width: 300px;-->
+            <!--left:0;-->
+            <!--background: red;-->
+        <!--}-->
+
+        <!--.layout.absolute .center {-->
+            <!--left: 300px;-->
+            <!--right: 300px;-->
+            <!--background: yellow;-->
+        <!--}-->
+
+        <!--.layout.absolute .right {-->
+            <!--width: 300px;-->
+            <!--right: 0;-->
+            <!--background: blue;-->
+        <!--}-->
+    <!--</style>-->
+    <!--<h1>三栏布局</h1>-->
+    <!--<article class="left-right-center">-->
+        <!--<div class="left"></div>-->
+        <!--<div class="right"></div>-->
+        <!--<div class="center">-->
+            <!--<h2>绝对定位方案</h2>-->
+            <!--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolores doloribus eaque enim laborum natus-->
+            <!--optio quo vero. Corporis non quidem sit sunt totam. Consequatur cumque delectus ea magni modi suscipit-->
+            <!--tempore. Adipisci deserunt, et facilis incidunt ipsam laboriosam laborum neque nostrum numquam quisquam-->
+            <!--reiciendis soluta temporibus, tenetur vel, voluptatum.-->
+        <!--</div>-->
+    <!--</article>-->
+<!--</section>-->
+<!--要先把absolute变成display:none否则会盖住下面的div-->
+
+
+
+<!--表格布局  -->
+<section class="layout flex">
+    <style media="screen">
+        .left-right-center {
+            display: table;
+            width: 100%;
+        }
+
+        .left-right-center > div{
+            display: table-cell;
+        }
+        .layout.flex .left {
+            width: 300px;
+            background: red;
+        }
+
+        .layout.flex .center {
+            background: yellow;
+        }
+
+        .layout.flex .right {
+            width: 300px;
+            background: blue;
+        }
+    </style>
+    <h1>三栏布局</h1>
+    <article class="left-right-center">
+        <div class="left"></div>
+        <div class="center">
+            <h2>表格方案</h2>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolores doloribus eaque enim laborum natus
+            optio quo vero. Corporis non quidem sit sunt totam. Consequatur cumque delectus ea magni modi suscipit
+            tempore. Adipisci deserunt, et facilis incidunt ipsam laboriosam laborum neque nostrum numquam quisquam
+            reiciendis soluta temporibus, tenetur vel, voluptatum.
+        </div>
+        <div class="right"></div>
+    </article>
+</section>
+</body>
+</html>
