@@ -9,7 +9,7 @@
 - width = content + padding + border
 
 
-## JS获取
+## JS获取元素宽高
 - dom.style.width/height 只能取内联样式的宽高
 - dom.currentStyle.width/height 获取渲染后的宽高，不过只有IE有这个属性
 - window.getComputedStyle(dom).width/height 兼容Chrome,Firefox
