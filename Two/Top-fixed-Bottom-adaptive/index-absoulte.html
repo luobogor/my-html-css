@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上下高度固定，中间自适应（常见手机布局）</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        body > div {
+            position: absolute;
+            width: 100%;
+        }
+
+        .top {
+            min-height: 160px;
+        }
+
+        .top {
+            top: 0;
+            background-color: burlywood;
+            font-size: 30px;
+        }
+
+        .bottom {
+            top: 160px;
+            bottom: 0;
+            background-color: #ff819a;
+            /*这里是关键*/
+            overflow: auto;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="top">
+    我是顶部
+</div>
+<div class="bottom">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur distinctio ducimus, eos
+    exercitationem iusto, libero magni maxime optio pariatur placeat quae sint voluptatum. Animi, architecto
+    blanditiis consequatur deleniti eos magnam maxime minima perferendis qui ratione repellat suscipit. Ad alias
+    aliquid amet assumenda consequatur deleniti dolor eaque eius facilis fuga hic id illum inventore laborum maiores
+    minima odit optio provident quisquam quo reiciendis, sapiente sequi tempora, vero voluptatem. Ad assumenda at,
+    commodi corporis, dolor eaque id illo ipsa ipsam molestias odio omnis perspiciatis quia repudiandae suscipit
+    ullam ut? Adipisci atque cum distinctio error harum nostrum obcaecati, placeat quidem rerum similique?
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque debitis enim eos esse impedit incidunt laborum qui
+    quisquam repellat suscipit! Adipisci commodi, consectetur dignissimos distinctio, earum enim harum iste, laborum
+    neque nisi praesentium quaerat quia recusandae repudiandae sint sunt veritatis. Alias aliquid dolorem facere nemo
+    quaerat qui reprehenderit voluptas voluptatem.
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consectetur ducimus excepturi impedit officiis
+    omnis porro praesentium quaerat quod tempore! Consequatur dolores enim eveniet id ipsum itaque voluptate? Animi
+    aspernatur at distinctio doloremque ea eveniet explicabo facilis iusto maxime, neque perferendis possimus qui,
+    quibusdam quo quod repellendus rerum sed temporibus.
+</div>
+</body>
+</html>

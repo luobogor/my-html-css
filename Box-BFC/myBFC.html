@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BFC</title>
+    <style>
+        html * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<section class="parent">
+    <style>
+        .parent {
+            /*不加overflow: hidden,parent的高度是100px*/
+            /*加上overflow: hidden,parent的高度是110px*/
+            overflow: hidden;
+            background-color: burlywood;
+        }
+
+        .child {
+            height: 100px;
+            background-color: #DE8DB2;
+            margin-top: 10px;
+        }
+    </style>
+    <article class="child">
+
+    </article>
+</section>
+
+<!-- 1.BFC垂直方向边距重叠 -->
+<section id="margin">
+    <style>
+        #margin {
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        #margin > p {
+            margin: 5px auto 25px;
+            background-color: red;
+        }
+    </style>
+    <p>1</p>
+    <!--这里加了overflow: hidden与没加好像没区别-->
+    <div style="overflow: hidden">
+        <p>2</p>
+    </div>
+    <p>3</p>
+</section>
+
+
+<!--2.BFC不与float重叠(解决侵占浮动元素的问题)-->
+<section id="layout">
+    <style>
+        #layout{
+            background: red;
+        }
+        
+        #layout .left{
+            float: left;
+            height: 100px;
+            width: 100px;
+            background: #ff75c9;
+        }
+
+        #layout .right{
+            background: #ccc;
+            /*注意这里是110px*/
+            /*注意观察.right加上overflow: auto与不加上overflow: auto时width的变化*/
+            height: 110px;
+            overflow: auto;
+        }
+    </style>
+    <div class="left">我在左边</div>
+    <div class="right">我在右边</div>
+</section>
+
+
+
+<!--3.BFC子元素即使是float也会参与计算(清除子元素的浮动)-->
+<section id="float">
+    <style>
+        #float {
+            /*默认情况下#float高度为0,脱离文档流*/
+            /*加上 overflow: auto;float: left;使#float元素成为BFC,#float会有高度*/
+            overflow: auto;
+            background-color: blue;
+        }
+
+        .float {
+            float: left;
+            height: 110px;
+            background-color: #DE8DB2;
+        }
+    </style>
+    <div class="float">
+        I am float
+    </div>
+    Hello,World
+</section>
+
+
+</body>
+</html>
