@@ -1,0 +1,55 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.flex-container{
+    display: flex;
+    background-color: #fff;
+    /*相当于右浮动*/
+    /*justify-content: flex-end;*/
+}
+
+.box{
+    height: 100px;
+    min-width: 100px;
+}
+.one{
+    background-color: red;
+}
+
+.two{
+    background-color: #6cffa7;
+}
+
+.three{
+    background-color: deepskyblue;
+}
+
+
+/*float*/
+.float-container{
+    background-color: #fff;
+}
+
+.float-box{
+    height: 100px;
+    min-width: 100px;
+    float: left;
+}
+/*清浮动*/
+.float-container:after{
+    content: "";
+    display: block;
+    clear: both;
+}

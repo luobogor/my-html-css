@@ -1,0 +1,45 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.flex-container{
+    display: flex;
+    background-color: #fff;
+}
+
+.box{
+    height: 100px;
+    min-width: 100px;
+}
+
+/*******************当页面缩小时，每个元素会自适用缩小，直到宽度等于100px时不再缩小********************/
+/*flex-grow可以分为12列当作bootstrap的栅格系统使用*/
+/*(960-300)/12 = 55*/
+.one{
+    background-color: red;
+    flex-grow:2;
+    /*width: 100 + 55*2 = 210px*/
+}
+
+.two{
+    background-color: #6cffa7;
+    flex-grow:4;
+    /*width: 100 + 55*4 = 320px*/
+}
+
+.three{
+    background-color: deepskyblue;
+    flex-grow:6;
+    /*width: 100 + 55*6 = 430px*/
+}

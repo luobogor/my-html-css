@@ -1,0 +1,43 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.flex-container{
+    height: 600px;
+    display: flex;
+    background-color: #fff;
+    flex-flow: column;
+    /*出现中央居中效果*/
+    justify-content:center;
+    align-items: center;
+}
+
+.box{
+    /*当flex-flow: column时,flex-basic:100px相当于设置了min-height:100px*/
+    flex: 0 0 100px;
+    width: 100px;
+}
+
+
+.one{
+    background-color: red;
+}
+
+.two{
+    background-color: #6cffa7;
+}
+
+.three{
+    background-color: deepskyblue;
+}

@@ -16,7 +16,7 @@
 - dom.getBoundingClientRect().width/height
 
 ## 满足下列CSS声明之一的元素便会生成BFC：
-1. 根元素或其它包含它的元素 ？？？
+1. 根元素或其它包含它的元素(<html></html>是根元素，这个标签会生成一个BFC)
 2. float的值不为none；
 3. overflow的值不为visible；
 4. position的值不为static；

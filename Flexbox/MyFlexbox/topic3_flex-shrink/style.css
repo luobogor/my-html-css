@@ -1,0 +1,41 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.flex-container{
+    display: flex;
+    background-color: #fff;
+}
+
+.box{
+    height: 100px;
+    /*注意这个地方之前是100px，现在是320px*/
+    width: 320px;
+}
+
+/*******************flex-shrink越大，缩小程度越大。********************/
+.one{
+    background-color: red;
+    flex-shrink: 2;
+}
+
+.two{
+    background-color: #6cffa7;
+    flex-shrink: 4;
+}
+
+.three{
+    background-color: deepskyblue;
+    flex-shrink: 6;
+}

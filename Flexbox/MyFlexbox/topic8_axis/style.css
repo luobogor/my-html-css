@@ -1,0 +1,41 @@
+*{
+    font-family: verdana;
+    margin: 0;
+}
+
+body{
+    background: #eee;
+}
+
+.wrapper{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.flex-container{
+    height: 800px;
+    display: flex;
+    background-color: #fff;
+    flex-flow: column;
+    /*出现垂直居中效果*/
+    justify-content:center;
+}
+
+.box{
+    height: 100px;
+    flex: 0 0 100px;
+}
+
+
+.one{
+    background-color: red;
+}
+
+.two{
+    background-color: #6cffa7;
+}
+
+.three{
+    background-color: deepskyblue;
+}
