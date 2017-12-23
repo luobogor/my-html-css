@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7阶层叠水平</title>
+    <style>
+        img {
+            float: left;
+            margin-right: -20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div style="overflow: auto">
+    <h2>内容比浮动层叠水平值大，文字是inline水平的</h2>
+    <img src="img/luck1.jpeg" alt="">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid harum ipsum iusto laudantium quia rem sint
+        totam veniam vero voluptatibus. Adipisci animi autem harum ipsam modi quibusdam voluptatem? Cum dolor dolorum ex
+        excepturi exercitationem in, incidunt itaque sunt. Ab, aperiam beatae blanditiis culpa cum earum eveniet harum
+        incidunt laudantium magni minima modi neque nihil obcaecati qui quisquam quod recusandae saepe, suscipit tenetur
+        ullam velit voluptas voluptatem. Alias aliquid animi cum deserunt dolor et facere facilis impedit ipsam
+        laboriosam minima nihil nulla, odio odit perspiciatis quas quis ratione sed soluta ut. Labore magni
+        necessitatibus nesciunt quas qui sit tempore totam! Autem?
+    </p>
+</div>
+
+<div style="margin-top: 30px;color: white">
+    <h2>inline-block比block层叠水平高</h2>
+    <h3>背景色覆盖是层叠顺序，文字覆盖是后来居上(div的标签在span在后面，所以文字覆盖到上面去了)</h3>
+    <span style="height: 100px;width: 200px;margin: -30px;display: inline-block;background-color: deepskyblue;">
+        display:inline-block
+    </span>
+    <div style="height: 100px;width: 200px;background-color: green;">
+        display:block
+    </div>
+</div>
+</body>
+</html>

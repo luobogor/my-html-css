@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        /*提示*/
+        /*border负边距*/
+        /*z-index*/
+        /*box-sizing*/
+        /*css选择器*/
+        /*消除所有元素的边距*/
+
+        html, body * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid {
+            width: 960px;
+            display: flex;
+            flex-wrap: wrap;
+            /*清除1,2,3单元格的margin-top: -4px偏移*/
+            padding-top: 4px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            border: 4px solid #eee;
+            flex-basis: 320px;
+            height: 320px;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 320px;
+            /*负边距重叠消除多余部分*/
+            /*同一行的三个元素都设置了margin-top之后，整一行才会同时向上4px*/
+            margin-top: -4px;
+            /*只要同一列的其中一个元素设置了margin-left，该行的元素也会向左移动，
+            不用等到同一列三个元素同时设置margin-left，同一行的其他元素才移动*/
+            margin-left: -4px;
+        }
+
+        li:hover {
+            border-color: red;
+            z-index: 2;
+        }
+
+        li:nth-child(3n+1){
+            /*清除1,4,7单元格的margin-left: -4px偏移*/
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul class="grid">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+</div>
+
+<!--<div style="margin-top: 20px">-->
+    <!--<div style="display:inline-block; width: 100px;border: 1px solid #000;">-->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
+            <!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
+            <!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
+    <!--</div>-->
+
+    <!--<div style="display:inline-block;width: 200px;border: 1px solid #000;">-->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
+            <!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
+            <!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
+    <!--</div>-->
+    <!--<div style="display:inline-block;width: 200px;border: 1px solid #000;">-->
+        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
+            <!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
+            <!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>

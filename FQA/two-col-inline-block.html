@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block两列布局元素不对齐问题</title>
+    <!-- - inline-block不能做一列固定一列自适应的，假设如果同一行有两个inline-block,只要其中一个元素不固定width-->
+    <!--，那么当这个元素的内容超过当前屏幕宽度时，这个元素就会换行。-->
+    <!-- - 但是inline-block可以用来做两列同时做适应，只需要两列同时设置width百分比就可以。-->
+    <!--注意这种布局是两个元素块的底部对齐也就是vertical-align: baseline，而不是像float布局那样顶部对齐，可以设置vertical-align: top顶部对齐;-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .m-box {
+            /*position: relative;*/
+        }
+
+        #left {
+            /*display: inline-block与overflow: auto;都会触发BFC*/
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+
+            /*这里会触发一个BFC使两个元素高度不对齐*/
+            /*overflow: auto;*/
+            /*但加上vertical-align属性后又正常*/
+            /*导致这样的问题出现的原因是， inline-block 的默认属性是 vertical-align: baseline;以父元素的基线对齐*/
+            /*参考https://www.zhihu.com/question/28057944*/
+            /*vertical-align: top;*/
+            background-color: burlywood;
+        }
+
+        #content {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            background-color: #80f7ff;
+        }
+
+        .box2 {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            /*margin: 1em;*/
+            border: 1px solid green;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="m-box">
+    <div id="left">
+        <span class="label">&lt;div class="box2"&gt;</span>
+        <p>我是一个行内块！</p><span class="endlabel">&lt;/div&gt;</span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam cum dolore doloremque eveniet fugiat illo iure
+        tempora ullam velit veniam. Corporis cupiditate debitis eum exercitationem illo iure molestiae nemo odio
+        officiis quibusdam. Animi dolorem eveniet incidunt ipsum non odio repellendus unde. Autem, consectetur debitis
+        dolore dolores ipsa nisi perspiciatis recusandae sapiente! Dicta error et hic quas repellendus saepe voluptate.
+        Accusamus accusantium amet corporis, culpa doloribus ea eaque eligendi eveniet ex excepturi impedit labore nihil
+        numquam odit officia optio, porro quaerat quibusdam recusandae, repudiandae similique sit tenetur voluptates.
+        Accusamus consequatur consequuntur cum delectus deserunt enim, exercitationem fugit iure modi nam natus, nihil
+        nostrum pariatur repellendus totam ullam vel veniam, voluptas. Cum distinctio explicabo laudantium natus
+        sapiente ullam. At cumque deleniti illo natus nostrum nulla quasi repellendus temporibus. Aliquam at cum error
+        illo maiores nobis praesentium quis repellendus tempora tenetur totam ut, velit voluptate? Accusamus adipisci
+        animi atque cum debitis distinctio eligendi expedita facilis fugiat illum ipsum nulla, pariatur placeat porro
+        quibusdam saepe veritatis vero! Ad consequatur dolor doloribus fuga harum nam natus necessitatibus nobis odit
+        optio, quas quasi qui quia, quidem quisquam quo, reprehenderit soluta ullam unde voluptate. Adipisci amet at
+        aut, id in, necessitatibus nesciunt, quos reprehenderit repudiandae sint voluptatibus?
+    </div>
+    <div id="content">
+        <span class="label">&lt;div class="box2"&gt;</span>
+        <p>我是一个行内块！</p><span class="endlabel">&lt;/div&gt;</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box2">
+        <span class="label">&lt;div class="box2"&gt;</span>
+        <p>我是一个行内块！</p><span class="endlabel">&lt;/div&gt;</span>
+    </div>
+
+    <div class="box2">
+        <span class="label">&lt;div class="box2"&gt;</span>
+        <p>我是一个行内块！</p><span class="endlabel">&lt;/div&gt;</span>
+    </div>
+</div>
+</body>
+</html>
