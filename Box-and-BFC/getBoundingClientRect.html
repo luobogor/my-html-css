@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: deepskyblue;
+            position: absolute;
+            left: 200px;
+            top: 1300px;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    400 X 400
+</div>
+<div>
+    上：<span id="borderTopToClientTop"></span><br>
+    下：<span id="borderBottomToClientTop"></span><br>
+    左：<span id="borderLeftToClientLeft"></span><br>
+    右：<span id="borderRightToClientLeft"></span><br>
+    元素Y坐标:<span id="y"></span><br>
+</div>
+</body>
+<script>
+    var boxDom = document.getElementById('box');
+    //    boxDom.getBoundingClientRect().left;
+    document.getElementById('borderTopToClientTop').innerHTML = boxDom.getBoundingClientRect().top;
+    document.getElementById('borderBottomToClientTop').innerHTML = boxDom.getBoundingClientRect().bottom;
+    document.getElementById('borderLeftToClientLeft').innerHTML = boxDom.getBoundingClientRect().left;
+    document.getElementById('borderRightToClientLeft').innerHTML = boxDom.getBoundingClientRect().right;
+    //获得一个元素当前Y轴坐标的方法
+    //当前元素顶边到视口顶部的距离+文档顶部超出视口的部分的高度
+    document.getElementById('y').innerHTML = boxDom.getBoundingClientRect().top + document.documentElement.scrollTop;
+    //同理可得到元素x坐标
+//    boxDom.getBoundingClientRect().left+document.documentElement.scrollLeft;
+</script>
+</html>

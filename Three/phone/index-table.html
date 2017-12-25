@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上下高度固定，中间自适应（常见手机布局）</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-size: 1.8rem;
+        }
+
+        body > div {
+            position: absolute;
+            width: 100%;
+        }
+
+        .top, .bottom {
+            min-height: 160px;
+        }
+
+        .top {
+            top: 0;
+            background-color: #6cffa7;
+        }
+
+        .box {
+            top: 160px;
+            bottom: 160px;
+            /*这里是关键*/
+            overflow: auto;
+            background-color: burlywood;
+        }
+
+        .bottom {
+            bottom: 0;
+            background-color: #ff819a;
+        }
+
+
+    </style>
+</head>
+<body>
+<div>
+    <table border="1">
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab amet architecto consequuntur culpa
+                dignissimos dolorem dolores dolorum, explicabo, fugiat itaque iure iusto labore magnam molestiae
+                mollitia nesciunt nisi perspiciatis, possimus praesentium quis quo quod repellendus reprehenderit
+                sapiente sint soluta suscipit tenetur ut veniam. Accusantium aperiam, explicabo facilis iure mollitia
+                neque qui quisquam? Autem cupiditate doloremque dolorum, eaque eius fugit illo, illum odio porro
+                provident quo similique sunt temporibus. At consectetur consequatur delectus, deleniti, explicabo illo
+                incidunt magnam maiores minima modi molestiae obcaecati porro quidem totam unde veritatis, vero.
+                Consequatur doloremque facere iste laudantium nobis quod quos, repellat voluptates voluptatibus?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur earum laboriosam perferendis qui
+                repellat tenetur! Aperiam aspernatur quisquam quo? Accusamus adipisci commodi, deserunt dicta dolore
+                esse facilis in, ipsa ipsam iste labore obcaecati quae, quidem quisquam reprehenderit! Deserunt,
+                doloremque est eum illo ipsam, itaque nisi pariatur quam reprehenderit sequi tenetur veniam. A animi
+                asperiores at cum doloribus ex, exercitationem facilis harum in ipsum, iusto molestiae molestias nihil
+                omnis qui, ut voluptatibus. Ad beatae debitis error illum nesciunt optio unde. Debitis distinctio
+                impedit modi obcaecati, praesentium quas qui repellat saepe. Cum est excepturi, maxime molestiae
+                necessitatibus nobis porro quaerat quos ullam.
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
