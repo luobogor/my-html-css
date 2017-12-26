@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a标签4个伪类</title>
+    <style>
+        /*提示：在 CSS 定义中，a:hover 必须被置于 a:link 和 a:visited 之后，才是有效的。*/
+
+        /*提示：在 CSS 定义中，a:active 必须被置于 a:hover 之后，才是有效的。*/
+
+        /*提示：伪类名称对大小写不敏感。*/
+
+        /*LVHA*/
+
+        /* 未访问过的链接，注意是未访问过，不是未点击过。
+        绝大多数情况下是你重新进入一个页面，里面某个a标签你之前已经访问过，所以即时你没点击，样式也会变成visited*/
+        a:link{
+            color: red;
+        }
+
+        a:visited{/* 已访问过的链接 */
+            color: #ffad1c;
+        }
+
+        /*当鼠标点击a标签的时候触发了:active同时也触发了:hover，如果:hover写在:active就会把:active的显示样式给覆盖，*/
+        /*所以 :active伪类需要放在:hover伪类后面*/
+        a:hover{
+            color: green;
+        }
+
+        /* 鼠标按下不放时 */
+        a:active{
+            color: rgba(255, 117, 201, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+           比如说，如果下面的href属性你改成一个你的浏览器没有访问过的url，href="http://www.shenmegui.com",那么此时，显示的是红色(link)。<br>
+            如果href="http://www.baidu.com"，那么你的页面99%可能显示的是黄色(visited)(当然如果你没访问过百度此时显示的是红色)。即使你关闭了页面，重新打开也是同样的结果，因为浏览器缓存中记录了你访问过百度。
+        </p>
+
+        <h2>visited</h2>
+        <!--visited-->
+        <a href="http://www.baidu.com" target="_blank" >I am a link www.baidu.com</a><br>
+        <a href="" target="_blank" >I am href empty，一定是visited样式</a><br>
+        <h2>link</h2>
+        <!--原来是link，如果你访问过之后会变成visited-->
+        <a href="http://www.shenmegui.com" target="_blank" >I am a link www.shenmegui.com</a><br>
+        <a href="#main">I am #main,点击之后会变成visited样式</a><br>
+        <!--无论你访问或没访问过都是link-->
+        <a href="javascript:void(0)" target="_blank" >I am javascript:void(0),一定是link样式</a><br>
+        <h2>none</h2>
+        <a>正常情况下没有任何样式，hover时变green</a>
+    </div>
+</body>
+</html>

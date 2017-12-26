@@ -29,6 +29,12 @@
     左：<span id="borderLeftToClientLeft"></span><br>
     右：<span id="borderRightToClientLeft"></span><br>
     元素Y坐标:<span id="y"></span><br>
+    <p>
+        window.screen.height获取屏幕高度，也就是说无论浏览器怎样绽放，这个值都是不变的，因为它是屏幕高度，无浏览器无关
+    </p>
+    <p>
+        这个屏幕的屏幕高度是:<span id="windowHeight"></span>
+    </p>
 </div>
 </body>
 <script>
@@ -38,10 +44,11 @@
     document.getElementById('borderBottomToClientTop').innerHTML = boxDom.getBoundingClientRect().bottom;
     document.getElementById('borderLeftToClientLeft').innerHTML = boxDom.getBoundingClientRect().left;
     document.getElementById('borderRightToClientLeft').innerHTML = boxDom.getBoundingClientRect().right;
-    //获得一个元素当前Y轴坐标的方法
+    //获得一个元素相对于整个文档的Y坐标的方法,注意是相对于整个文档的Y坐标，而不是相对于屏幕顶部的Y坐标
     //当前元素顶边到视口顶部的距离+文档顶部超出视口的部分的高度
     document.getElementById('y').innerHTML = boxDom.getBoundingClientRect().top + document.documentElement.scrollTop;
     //同理可得到元素x坐标
 //    boxDom.getBoundingClientRect().left+document.documentElement.scrollLeft;
+    document.getElementById('windowHeight').innerHTML = window.screen.height;
 </script>
 </html>
