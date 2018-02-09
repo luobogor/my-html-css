@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            color: white;
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+        }
+
+        .one, .two, .three, .four {
+            position: absolute;
+        }
+
+        .one {
+            background: #f00;
+            outline: 5px solid #000;
+            top: 100px;
+            left: 200px;
+            z-index: 10;
+        }
+
+        .two {
+            background: #0f0;
+            outline: 5px solid #000;
+            top: 50px;
+            left: 75px;
+            z-index: 100;
+        }
+
+        .three {
+            background: #0ff;
+            outline: 5px solid #000;
+            top: 125px;
+            left: 25px;
+            z-index: 150;
+        }
+
+        .four {
+            background: #00f;
+            outline: 5px solid #ff0;
+            top: 200px;
+            left: 350px;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body>
+<div class="one">
+    one,z-index:10
+    <div class="two">
+        two,z-index:100
+    </div>
+    <div class="three">
+        three,z-index:150
+    </div>
+</div>
+<div class="four">
+    four,z-index:50
+</div>
+
+<div style="position: absolute;right: 100px">
+    <pre style="color: black">
+        事实上，我们真正得到的是如下结果：
+        .one — z-index = 10
+        .two — z-index = 10.100
+        .three — z-index = 10.150
+        .four — z-index = 50
+    </pre>
+</div>
+</body>
+</html>
