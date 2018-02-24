@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <img style="float: left;" src="luck1.jpeg" alt="">
+    <!--<img style="position: absolute" src="luck1.jpeg" alt="">-->
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci, dolores error ipsum magnam magni
+        obcaecati omnis, quasi recusandae, rem repudiandae sunt. Accusamus accusantium architecto consequuntur debitis
+        deleniti doloremque eius enim eos eum exercitationem fugiat illo minima molestiae nam nobis nostrum officia placeat
+        praesentium quia quidem quisquam recusandae sapiente, sit soluta vitae? Accusamus adipisci architecto autem dolores
+        facilis fugiat, harum maxime nam nisi odio odit quia sequi soluta, ut vel voluptatibus voluptatum. Accusamus
+        asperiores assumenda atque culpa cum exercitationem facere fuga illo iste, minima perferendis possimus quia ratione,
+        saepe vero? Expedita hic mollitia nihil perspiciatis reiciendis repudiandae sint ullam?
+    </p>
+</div>
+
+<div style="width: 400px;height: 200px;">
+    <!--span标签是无法设置宽高，因为float的block化设置宽高才有效-->
+    <!--height:100%即为200，宽度由内容撑开。-->
+    <!--但是内容中的 i 是绝对定位，脱离了文档流，所以不占父级空间，所以span的width=0-->
+    <span style="float: left;width: auto;height: 100%;">
+        <i style="position: absolute;float: left;width: 100px;height: 50px;">hello</i>
+    </span>
+</div>
+
+</body>
+</html>

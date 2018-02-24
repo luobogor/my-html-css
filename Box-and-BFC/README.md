@@ -1,12 +1,14 @@
-## 基本概念：
+## 盒子模型
+
+### 基本概念：
 - 标准模型(box-sizing默认为content-box)
 - IE模型(box-sizing默认为border-box)
 
-## 标准模型
-- width = content
+### 标准模型
+- width属性的值 = content
 
-## IE模型
-- width = content + padding + border
+### IE模型
+- width属性的值 = content + padding + border
 
 
 ## JS获取元素宽高
