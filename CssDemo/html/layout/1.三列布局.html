@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局</title>
+    <link rel="stylesheet" href="../../css/utilities.css">
+</head>
+<body>
+<div class="clearfix" style="text-align: center;border: 1px solid green">
+    <div style="float: left;border: 1px solid darkseagreen">
+       <ul>
+           <li>我是左侧内容</li>
+           <li>我是左侧内容</li>
+           <li>我是左侧内容</li>
+           <li>我是左侧内容</li>
+           <li>我是左侧内容</li>
+       </ul>
+    </div>
+    <div style="float: right;border: 1px solid darkcyan">
+        <ul>
+            <li>我是右侧内容</li>
+            <li>我是右侧内容</li>
+            <li>我是右侧内容</li>
+            <li>我是右侧内容</li>
+            <li>我是右侧内容</li>
+        </ul>
+    </div>
+    <div style="border: 1px solid burlywood;margin: 10px">
+        <p>我是中间内容，请过分关注我.中间的div是会贯穿两边的，因为float元素已经脱离了文档结构。所以，不要在中间的div再设置border，就让它贯穿着就行。虽然中间div贯穿，但此时中间的内容是不会贯穿的。
+        </p>
+    </div>
+</div>
+</body>
+</html>

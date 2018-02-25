@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p:nth-child(even){
+            background-color: gray;
+        }
+        div {
+            border:3px solid burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>我是第一行</p>
+        <p style="position: relative;top: 20px;left: 20px">relative,相对自身位移，无侵入，同时设置top,bottom则取top,同时设置left,right则取left</p>
+        <p>我是第三行</p>
+        <p>我是第四行</p>
+    </div>
+
+
+    <div style="position: relative; margin-top:20px;">
+        <p>我是第一行</p>
+        <p style="position: absolute;top: 10px;left: 100px">absolute,相对祖先relative/fixed/absolute位移</p>
+        <p>具有包裹性</p>
+        <p>同时设置top/bottom,left/right会产生拉伸</p>
+        <p>与float相似有侵害性（脱离文本流）</p>
+    </div>
+
+</body>
+</html>

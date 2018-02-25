@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #triangle{
+            /*一个div，当它的宽和高都是0的时候，它便是一个点。
+            紧记width和height设置的只是内容宽高*/
+            width: 0;
+            height: 0;
+            border-left: 100px solid yellow;
+            border-right: 100px solid red;
+            border-top: 100px solid blue;
+            border-bottom: 100px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: 40px; padding: 10px;border: 5px solid burlywood;">
+        margin纵向层叠，大的会把小的吃掉
+    </div>
+
+    <div style="margin: 10px; padding: 10px;border: 5px solid burlywood;">
+        默认情况下，div的display:block，宽度会充满整个父容器。
+    </div>
+
+    <div style="display: table; margin: 10px; padding: 10px;border: 5px solid burlywood;">
+        内容的宽度按照内容计算，盒子的宽度将在内容宽度的基础上再增加（padding宽度 + border宽度 + margin宽度）之和。
+    </div>
+
+    <div style="width: 300px; box-sizing: border-box; margin: 10px; padding: 10px;border: 5px solid burlywood;">
+        div设置了box-sizing:border-box之后，300px的宽度是内容 + border + 边框的宽度（不包括margin）
+    </div>
+
+
+    <div id="triangle"></div>
+</body>
+</html>

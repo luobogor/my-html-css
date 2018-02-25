@@ -6,4 +6,16 @@ absolute与float都有block化能力
 #### absolute
 而absolute则直接覆盖到文字上面，完全脱离文档流
 
+如果不需要支持I6/7，这样写已经足够了，不需要在before也做动作
 
+````css
+.clearfix:after{
+  /*content与display为了解决Opera浏览器的BUG*/
+  content:" "; /*注意里面的空格*/
+  display:block;
+  clear:both;
+}
+````
+
+https://segmentfault.com/a/1190000008424822
+http://blog.staynoob.cn/post/2016/05/css-float-clearfix-best-in-practice/

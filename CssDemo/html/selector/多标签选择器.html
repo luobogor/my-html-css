@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            border: 3px solid burlywood;
+            margin: 10px;
+        }
+        /*E ~ F	匹配任何在E元素之后的同级F元素*/
+        #div1 p ~ ul { background:#ff0; }
+
+        /*E + F	毗邻元素选择器，匹配所有紧随E元素之后的同级元素F*/
+        #div2 p + ul { background:#ff0; }
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <ul>
+            <li>li1</li>
+            <li>li1</li>
+            <li>li3</li>
+        </ul>
+        <p>/*E ~ F	匹配任何在E元素之后的同级F元素*/</p>
+        <ul>
+            <li>li1</li>
+            <li>li1</li>
+            <li>li3</li>
+        </ul>
+        <ul>
+            <li>li1</li>
+            <li>li1</li>
+            <li>li3</li>
+        </ul>
+    </div>
+
+    <div id="div2">
+        <ul>
+            <li>li1</li>
+            <li>li1</li>
+            <li>li3</li>
+        </ul>
+        <p>/*E + F	毗邻元素选择器，匹配所有紧随E元素之后的同级元素F*/</p>
+        <ul>
+            <li>li1</li>
+            <li>li1</li>
+            <li>li3</li>
+        </ul>
+        <ul>
+            <li>li1</li>
+            <li>li1</li>
+            <li>li3</li>
+        </ul>
+    </div>
+</body>
+</html>

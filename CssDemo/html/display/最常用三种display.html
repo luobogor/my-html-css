@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            border: 3px solid burlywood;
+            margin: 10px;
+        }
+        span {
+            border: 3px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 200px;height: 100px">
+        我是block，可以设置height和width，而且独占一行
+    </div>
+    <div style="width: 200px;height: 100px">
+        我是block，可以设置height和width，而且独占一行
+    </div>
+    <div style="display: inline;width: 500px;height: 600px">
+        <b>style="display: inline;width: 500px;height: 600px"</b> 我是div,设置display:inline后沦落到这个地步,宽高都离我而去
+    </div>
+    <div style="text-align: center">
+        <span style="height: 200px;width: 100px">我是inline，设置宽高没什么卵用</span>
+        <span style="display: inline-block;height: 200px;width: 100px">我是inline-block，设置宽高有卵用</span>
+    </div>
+
+    <div style="text-align: center">
+        <b>inline元素可以直接用text-align:center水平居中</b>
+        &nbsp;&nbsp;
+        <button>我是inline</button>
+        <label for="">我label也是inline</label>
+        <input type="text" value="我也是inline">
+        <select name="" id="">
+            <option value="">我也是inline</option>
+            <option value="">我也是inline</option>
+            <option value="">我也是inline</option>
+        </select>
+    </div>
+</body>
+</html>

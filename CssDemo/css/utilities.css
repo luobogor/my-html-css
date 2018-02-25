@@ -1,0 +1,9 @@
+/*清浮动*/
+.clearfix:after{
+     content: '';
+     display: table;
+     clear: both;
+ }
+.clearfix{
+    *zoom: 1;/*兼容低版本IE*/
+}

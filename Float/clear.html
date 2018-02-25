@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clear属性详解</title>
+</head>
+<body>
+<div style="border: 1px solid burlywood;padding: 3px;margin-bottom: 100px">
+    <img src="../CssDemo/img/maven.jpeg" alt="" style="float: left;">
+    <p>图片加上float,并且清浮动</p>
+    <p>
+        939年4月，公司在《电影连环画周刊》创刊号上创造出了世界上第一位变种人超级英雄——纳摩，这是MARVEL的第一位超级英雄，他比公司的成立还要早半年，同年10月，公司在《惊奇漫画》第1期上创造出世界上第一位生化人超级英雄——初代霹雳火，并将纳摩引入其中，这水与火的双重合作，打出了MARVEL史上的第一拳。2009年底，MARVEL被华特迪士尼公司以42.4亿美元收购，成为其子公司。
+    </p>
+    <!--clear: right无效，clear: left，clear: both都有效-->
+    <!--clear:left表示元素在页面显示时左边不能有浮动元素(并不是指左边标签不能有浮动元素),-->
+    <!--应用于非浮动元素被向下移动从而扩展父元素的宽高达到清除之前的左浮动效果-->
+    <!--当应用于浮动元素时，它将元素的外边界移动到所有相关的浮动元素外边界的下方。这会影响后面浮动元素的布局，后面的浮动元素的位置无法高于它之前的元素。-->
+    <div style="clear: both"></div>
+</div>
+
+<style>
+    .container {
+        width: 600px;
+        overflow: hidden;
+        margin-bottom: 100px;
+    }
+
+    .container div {
+        float: left;
+        height: 200px;
+    }
+
+    .block1 {
+        width: 400px;
+        background: darkseagreen;
+    }
+
+    .block2 {
+        width: 200px;
+        background-color: pink;
+    }
+
+    .block3 {
+        width: 200px;
+        background-color: #d3d3d3;
+    }
+
+    .block4 {
+        width: 200px;
+        background-color: lightskyblue;
+        clear: left;
+    }
+
+    .block5 {
+        width: 200px;
+        background-color: #ffad1c;
+        clear: left;
+    }
+</style>
+<div class="container">
+    <div class="block1"></div>
+    <div class="block2"></div>
+    <div class="block3"></div>
+    <div class="block4"></div>
+    <div class="block5"></div>
+</div>
+
+
+<style>
+    .wrapper {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 100px;
+    }
+
+    .wrapper p {
+        width: 50%;
+    }
+
+    .right {
+        border: 1px solid black;
+        clear: right;
+    }
+
+    .black {
+        float: right;
+        margin: 0;
+        background-color: black;
+        color: #fff;
+        width: 20%;
+    }
+
+    .red {
+        float: right;
+        margin: 0;
+        background-color: red;
+        width: 20%;
+    }
+</style>
+<h1>clear right example</h1>
+<div class="wrapper">
+
+    <p class="black">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        Phasellus sit amet diam. Duis mattis varius dui. Suspendisse eget dolor.</p>
+
+    <p class="red">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+
+    <p class="right">This paragraph clears right.</p>
+</div>
+
+
+<style>
+    .wrapper2 {
+        border: 1px solid black;
+    }
+
+    .both2 {
+        border: 1px solid black;
+        /*如果clear:right虽然可以清浮动，但左边还是会被覆盖*/
+        clear: both;
+    }
+
+    .black2 {
+        float: left;
+        margin: 0;
+        background-color: black;
+        color: #fff;
+        width: 20%;
+    }
+
+    .red2 {
+        float: right;
+        margin: 0;
+        background-color: red;
+        width: 20%;
+    }
+</style>
+<h1>clear both example</h1>
+<div class="wrapper2">
+
+    <p class="black2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        Phasellus sit amet diam. Duis mattis varius dui. Suspendisse eget dolor.
+        Fusce pulvinar lacus ac dui.
+    </p>
+
+    <p class="red2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+        Phasellus sit amet diam. Duis mattis varius dui. Suspendisse eget dolor.
+    </p>
+
+    <p class="both2">This paragraph clears both.</p>
+
+</div>
+<form action="#" name="myform">
+<input type="text" value="hello" name="hello">
+</form>
+</body>
+<script>
+    debugger
+    document.myform.hello.addEventListener('keypress',function (e) {
+        debugger
+        console.log(e)
+    })
+</script>
+</html>

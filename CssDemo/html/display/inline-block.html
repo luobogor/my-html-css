@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block</title>
+    <style>
+        ul, li { padding: 0; margin: 0; list-style-type: none; }
+        li { display: inline-block; background:green; width: 100px; text-align: center;font-size:12px }
+
+        .ft50 { font-size:50px}
+        .ft0 { font-size:0 }
+    </style>
+</head>
+<body>
+<div>
+    在浏览器中，空白符是不会被浏览器忽略的，多个连续的空白符浏览器会自动将其合并成一个。我们编写代码时写的空格，换行都会产生空白符。所以自然而然的两个元素之间会有空白符，如果将上述例子中的a标签写成一行，空白符消失，菜单之间也就紧凑起来了。
+    空白字符占一个位，把font-size设置为0后，空白字符就消失
+</div>
+<ul>
+    <li>
+        首页
+    </li>
+    <li>
+        关于
+    </li>
+    <li>
+        热点
+    </li>
+    <li>
+        联系我们
+    </li>
+</ul>
+
+<ul class="ft50">
+    <li>
+        首页
+    </li>
+    <li>
+        关于
+    </li>
+    <li>
+        热点
+    </li>
+    <li>
+        联系我们
+    </li>
+</ul>
+
+<ul class="ft0">
+    <li>
+        首页
+    </li>
+    <li>
+        关于
+    </li>
+    <li>
+        热点
+    </li>
+    <li>
+        联系我们
+    </li>
+</ul>
+</body>
+</html>
