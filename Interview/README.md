@@ -29,6 +29,9 @@
     
     ````
     @import "mobstyle.css" screen and (max-width: 768px);
+    
+    link也可以定制，所以区别是？
+    <link href="other.css" rel="stylesheet" media="(min-width: 30em) and (orientation: landscape)">
     ````
 
 
