@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>上部自适应，下高度固定（常见手机布局）</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>上高度固定，下自适应（常见手机布局）</title>
     <style>
+        /*一定要html开始，一直向下都100%高*/
         html, body {
             margin: 0;
             padding: 0;
@@ -11,31 +13,30 @@
         }
 
         body > div {
-            position: absolute;
             width: 100%;
         }
 
-        .bottom {
-            min-height: 160px;
+        body {
+            display: grid;
+            grid-template-rows: 100px auto;
         }
 
         .top {
-            top: 0;
-            bottom: 160px;
-            /*这里是关键*/
-            overflow: auto;
             background-color: burlywood;
-            font-size: 30px;
         }
 
         .bottom {
-            bottom: 0;
             background-color: #ff819a;
+            /*这里是关键*/
+            overflow: auto;
         }
     </style>
 </head>
 <body>
 <div class="top">
+    我是顶部
+</div>
+<div class="bottom">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem consectetur distinctio ducimus, eos
     exercitationem iusto, libero magni maxime optio pariatur placeat quae sint voluptatum. Animi, architecto
     blanditiis consequatur deleniti eos magnam maxime minima perferendis qui ratione repellat suscipit. Ad alias
@@ -52,6 +53,5 @@
     aspernatur at distinctio doloremque ea eveniet explicabo facilis iusto maxime, neque perferendis possimus qui,
     quibusdam quo quod repellendus rerum sed temporibus.
 </div>
-<div class="bottom">我是底部</div>
 </body>
 </html>

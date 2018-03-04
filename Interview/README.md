@@ -13,25 +13,33 @@
    <strong> 不仅样式上表现粗体，阅读器会以低沉语气读出，表示内容的重要性
    <strong> 标签和 <em> 标签一样，用于强调文本，但它强调的程度更强一些。em 默认用斜体表示，strong 用粗体表示
    
-- link import
-
-    @import 为CSS服务；link是为当前的页服务
-
-    * 差别1：老祖宗的差别。link属于XHTML标签，而@import完全是CSS提供的一种方式。
-    
-    * 差别2：加载顺序的差别。当一个页面被加载的时候（就是被浏览者浏览的时候），link引用的CSS会同时被加载，而@import引用的CSS 会等到页面全部被下载完再被加载。所以有时候浏览@import加载CSS的页面时开始会没有样式（就是闪烁），网速慢的时候还挺明显
-    
-    * 差别3：兼容性的差别。由于@import是CSS2.1提出的所以老的浏览器不支持，@import只有在IE5以上的才能识别，而link标签无此问题。
-    
-    * 差别4：使用dom控制样式时的差别。当使用javascript控制dom去改变样式的时候，只能使用link标签，因为@import不是dom可以控制的。???
-    
-    @import的主要作用是可以制定引入规则，例如
-    
-    ````
-    @import "mobstyle.css" screen and (max-width: 768px);
-    
-    link也可以定制，所以区别是？
-    <link href="other.css" rel="stylesheet" media="(min-width: 30em) and (orientation: landscape)">
-    ````
+   
+   
+- 页面导入样式时，使用link和@import有什么区别？
 
 
+		（1）link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;
+
+		（2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
+
+		（3）import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;
+		
+- title与h1的区别、b与strong的区别、i与em的区别？
+
+		title属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响；
+
+		strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<strong>会重读，而<B>是展示强调内容。
+		strong展示为粗体，b展示为斜体
+
+		i内容展示为斜体，em表示强调的文本；
+
+		Physical Style Elements -- 自然样式标签
+		b, i, u, s, pre
+		Semantic Style Elements -- 语义样式标签
+		strong, em, ins, del, code
+		应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。
+
+
+- rem与em的区别
+
+    rem相对于根元素大小，em相对于父元素大小

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>垂直两列布局</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+
+        .top-center-bottom {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top {
+            height: 100px;
+            background-color: #b1b1b1;
+        }
+
+        .main-content {
+            flex: 1;
+            background-color: #ffad1c;
+            overflow: auto;
+        }
+
+        .bottom {
+            height: 100px;
+            background-color: #ff75c9;
+        }
+    </style>
+</head>
+<body>
+<section class="top-center-bottom">
+    <header class="top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, nostrum!</header>
+    <article class="main-content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam assumenda, atque consequuntur
+        delectus dolorem earum eligendi ex excepturi explicabo harum impedit laboriosam minima modi, possimus recusandae
+        repellat repudiandae saepe sit ullam. Accusantium, adipisci alias blanditiis cupiditate dolorem dolores dolorum
+        earum inventore laboriosam magni molestias natus necessitatibus perspiciatis quas quo, repellat, repellendus
+        rerum sapiente temporibus ullam vel vero voluptas voluptates voluptatibus voluptatum! Adipisci, dolorum eaque!
+        Adipisci aliquam aspernatur aut consectetur cum dicta dolor doloremque ea error est fuga hic iste laudantium,
+        natus odio odit quam quas quis, repudiandae rerum sed, tempora tempore temporibus voluptas voluptate. Accusamus
+        ad aliquid architecto aspernatur blanditiis cum dignissimos, dolore dolorum error explicabo impedit ipsa labore
+        libero minima necessitatibus neque optio ratione saepe sapiente sed tempora ullam voluptatem. Adipisci amet
+        aspernatur atque dolorem eius est et explicabo iste labore laboriosam, magni nam neque omnis quae, ratione
+        suscipit unde. Accusantium at eligendi et hic, itaque labore maxime nisi odit perferendis porro praesentium
+        reprehenderit, tempore tenetur velit vero vitae voluptatibus! A accusantium animi aperiam assumenda atque
+        blanditiis consequuntur debitis dignissimos dolores ea eaque error expedita explicabo harum illo incidunt modi
+        nesciunt nisi odio optio pariatur perspiciatis porro quam, quasi qui quia reprehenderit rerum sint ut vero
+        voluptas voluptatibus.
+    </article>
+    <footer class="bottom">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet corporis eum id impedit inventore, nihil
+        perferendis? Ab ex incidunt quasi?
+    </footer>
+</section>
+</body>
+</html>

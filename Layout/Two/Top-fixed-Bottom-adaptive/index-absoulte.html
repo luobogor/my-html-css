@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>上下高度固定，中间自适应（常见手机布局）</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>上高度固定，下自适应（常见手机布局）</title>
     <style>
+        /*一定要html开始，一直向下都100%高*/
         html, body {
             margin: 0;
             padding: 0;
@@ -16,22 +18,17 @@
         }
 
         .top {
-            min-height: 160px;
-        }
-
-        .top {
+            min-height: 100px;
             top: 0;
             background-color: burlywood;
-            font-size: 30px;
         }
 
         .bottom {
-            top: 160px;
+            top: 100px;
             bottom: 0;
             background-color: #ff819a;
             /*这里是关键*/
             overflow: auto;
-            font-size: 30px;
         }
     </style>
 </head>

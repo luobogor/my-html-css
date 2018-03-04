@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>上部自适应，下高度固定（常见手机布局）</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <style>
         html, body {
             margin: 0;
@@ -10,18 +11,13 @@
             height: 100%;
         }
 
-        body > div {
-            position: absolute;
-            width: 100%;
-        }
-
-        .bottom {
-            min-height: 160px;
+        body {
+            display: flex;
+            flex-direction: column;
         }
 
         .top {
-            top: 0;
-            bottom: 160px;
+            flex: 1;
             /*这里是关键*/
             overflow: auto;
             background-color: burlywood;
@@ -29,9 +25,10 @@
         }
 
         .bottom {
-            bottom: 0;
+            height: 160px;
             background-color: #ff819a;
         }
+
     </style>
 </head>
 <body>

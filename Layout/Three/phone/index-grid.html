@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上下高度固定，中间自适应（常见手机布局）</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .box {
+            height: 100%;
+            display: grid;
+            grid-template-rows: 100px auto 100px;
+        }
+
+        .top, .bottom {
+            background-color: red;
+        }
+
+        .middle {
+            background-color: yellow;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="top"></div>
+    <div class="middle">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam asperiores autem consequuntur,
+        deleniti
+        dicta dolores enim fugit iure laudantium, minus molestias nam natus odio omnis optio pariatur possimus
+        quod
+        repellendus, sequi soluta tempora ut. Incidunt odit quibusdam repellendus sed totam voluptates
+        voluptatum?
+        Ad animi aspernatur consequatur consequuntur corporis doloribus eaque eius eveniet in incidunt labore
+        molestiae nam, nihil nobis non omnis quae, quaerat quam qui, quia quis quo repellat reprehenderit
+        sapiente
+        sint totam vero! Assumenda beatae commodi consectetur cupiditate debitis deleniti ea earum facere
+        laudantium, natus nisi nobis odio officiis qui quibusdam quos repudiandae sapiente vero voluptates
+        voluptatibus. Commodi, impedit, veniam. A, ab, consequuntur debitis eius eligendi facere fuga harum
+        laboriosam magni maxime odio placeat praesentium quod rem, repellendus tempora tempore velit vitae!
+        Accusantium alias asperiores cumque delectus deleniti dignissimos earum eius eos fugiat in incidunt
+        ipsum
+        itaque laboriosam, magnam, magni nemo nisi odio placeat praesentium quisquam repudiandae sapiente sit
+        soluta
+        tenetur ut vel voluptas. A amet autem earum ex, explicabo facere illum incidunt laboriosam minima nihil
+        nisi
+        perspiciatis provident qui quos repudiandae tenetur vero. Alias architecto consequatur cum dolor enim
+        fugit
+        ipsam, itaque molestiae neque numquam odio placeat ratione. Ab alias consequatur, corporis cumque dolor
+        eius
+        expedita hic maxime minus natus nesciunt non obcaecati, placeat quisquam rerum sint sit sunt unde.
+        Doloribus
+        dolorum molestiae odio sunt? Culpa eius ipsa iste iusto maiores, officiis recusandae similique. A
+        asperiores
+        doloremque error et eveniet ex ipsa, laboriosam laborum maiores minus mollitia placeat quasi, sed soluta
+        sunt tempore veritatis vero? Commodi consectetur consequatur ducimus nemo neque optio qui quia sequi
+        veritatis voluptatum. Facere maiores nihil praesentium quas ratione veritatis. Commodi delectus dolore
+        ea
+        est explicabo neque nulla odit optio rerum voluptatum? Ab ad dolorum enim eveniet explicabo fugit hic
+        inventore iste nihil quos sed sint sit tenetur vero, voluptate. Amet, architecto autem cum deleniti
+        error
+        eum expedita explicabo, fuga ipsa ipsam iste laboriosam molestiae mollitia natus nisi non nostru
+    </div>
+    <div class="bottom"></div>
+</div>
+</body>
+</html>

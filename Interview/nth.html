@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*选取p的父元素下，既是p，而且还是位置第二个位置的孩子*/
+        p:nth-child(2) {
+            color: red;
+        }
+
+        /*选取p的父元素下，第二个p*/
+        p:nth-of-type(2) {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <h2>haha</h2>
+    <!--<h3>加上我后p:nth-child(2)选取不到p</h3>-->
+    <p>我是第1个p标签</p>
+    <p>我是第2个p标签</p>  <!-- 希望这个变红 -->
+</section>
+
+
+
+<style>
+    .list img {
+        display: inline-block;
+        background: blue;
+        width: 50px;
+        height: 50px;
+    }
+
+    /*p与:之间不能有空格*/
+    .list > p:nth-child(even) img{
+        background: red;
+    }
+
+    .list > p:last-child img {
+        background: orange;
+    }
+</style>
+
+
+<!--一道笔试题，猜颜色-->
+<div class="list">
+    <p><img src="" alt="">blue</p>
+    <p><img src="" alt="">red</p>
+    <div class="sub-list">
+        <p><img src="" alt="">blue</p>
+        <p><img src="" alt="">blue</p>
+    </div>
+    <p><img src="" alt="">red</p>
+    <div class="sub-list">
+        <p><img src="" alt="">blue</p>
+    </div>
+</div>
+</body>
+</html>
