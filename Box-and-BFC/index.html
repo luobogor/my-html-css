@@ -1,87 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>CSS盒模型</title>
-    <style media="screen">
-        html *{
+    <meta charset="UTF-8">
+    <title>BFC</title>
+    <style>
+        html * {
             margin: 0;
             padding: 0;
         }
     </style>
 </head>
 <body>
-<section class="box" id="sec">
-    <style media="screen">
-        #sec{
-            background: #f00;
+
+<!--0.解决外边距叠加的问题-->
+<section class="parent">
+    <style>
+        .parent {
+            /*不加overflow: hidden,parent的高度是100px*/
+            /*加上overflow: hidden,parent的高度是110px*/
+            /*因为overflow: hidden;触发创建了一个BFC，使parent与child不在同一个BFC*/
+            overflow: hidden;
+            background-color: burlywood;
         }
-        .child{
+
+        .child {
             height: 100px;
+            background-color: #DE8DB2;
             margin-top: 10px;
-            background: yellow
         }
     </style>
-    <article class="child"></article>
+    <article class="child">
+
+    </article>
 </section>
 
-<!-- BFC垂直方向边距重叠 -->
-
+<!--1. 属于同一个BFC的两个相邻盒子的margin可能会发生重叠-->
 <section id="margin">
     <style>
-        #margin{
-            background: pink;
+        #margin {
+            background-color: #3da6ff;
             overflow: hidden;
         }
-        #margin>p{
+
+        #margin > p {
             margin: 5px auto 25px;
-            background: red;
+            background-color: red;
         }
     </style>
     <p>1</p>
-    <div style="overflow:hidden">
-        <p>2</p>
+    <!-- "overflow: hidden"并触发该容器生成一个BFC。那么1与2，2与3属于不同的BFC，就不会发生margin重叠了。-->
+    <div style="overflow: hidden">
+        <p style="margin: 20px;background-color: #faaab1">2</p>
     </div>
     <p>3</p>
 </section>
 
-<!-- BFC不与float重叠 -->
+
+<!--2.BFC不与float重叠(解决侵占浮动元素的问题)-->
+<!--这一特性，我认为还是很有用的，特别是应用在两栏布局上，对比我们常规为非浮动元素或非定位元素设置margin来挤开的方法，其优点在于不需要去知道浮动或定位元素的宽度。-->
 <section id="layout">
-    <style media="screen">
-        #layout{
-            background: red;
+    <style>
+        #layout {
+            background: #5affa2;
         }
-        #layout .left{
+
+        #layout .left {
             float: left;
-            width: 100px;
             height: 100px;
-            background: pink;
+            width: 100px;
+            background: #ff75c9;
         }
-        #layout .right{
-            height: 110px;
+
+        #layout .right {
             background: #ccc;
+            /*注意这里是110px*/
+            /*注意观察.right加上overflow: auto与不加上overflow: auto时width的变化*/
+            height: 110px;
             overflow: auto;
         }
     </style>
-    <div class="left"></div>
-    <div class="right"></div>
+    <div class="left">我在左边</div>
+    <div class="right">我在右边</div>
 </section>
 
-<!-- BFC子元素即使是float、position:absolute也会参与计算 -->
+
+<!--3.BFC子元素即使是float也会参与计算(清除子元素的浮动)-->
 <section id="float">
-    <style media="screen">
-        #float{
-            background: red;
+    <style>
+        #float {
+            /*默认情况下#float高度为0,脱离文档流*/
+            /*加上 overflow: auto;float: left;使#float元素成为BFC,#float会有高度*/
             overflow: auto;
-            /*float: left;*/
+            background-color: blue;
         }
-        #float .float{
+
+        .float {
             float: left;
-            font-size: 30px;
+            height: 110px;
+            background-color: #DE8DB2;
         }
     </style>
-    <div class="float">我是浮动元素</div>
+    <div class="float">
+        I am float
+    </div>
+    Hello,World
 </section>
+
 
 </body>
 </html>
