@@ -12,6 +12,7 @@
     ````css
     background-image:-webkit-gradient(linear,0% 0%,100% 0%,from(#2A8BBE),to(#FE280E));
     ````
+- 定义变量
 
 - 多列布局
 
