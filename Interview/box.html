@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>奇形怪状物语</title>
+    <style>
+        #demo {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            position: relative;
+        }
+
+        #demo::before, #demo::after {
+            content: ' ';
+            width: 0;
+            height: 0;
+            border: solid transparent;
+            position: absolute;
+            left: 100%;
+        }
+
+        #demo::before {
+            border-left-color: #000;
+            border-width: 12px;
+            top: 18px;
+        }
+
+        #demo::after {
+            border-left-color: #fff;
+            border-width: 10px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="demo">
+</div>
+</body>
+</html>
