@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>again</title>
+    <style>
+
+        html, body * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .grid {
+            display: flex;
+            width: 960px;
+            flex-wrap: wrap;
+        }
+
+        section {
+            border: 4px solid #eee;
+            flex-basis: 320px;
+            height: 320px;
+            box-sizing: border-box;
+            margin-top: -4px;
+            margin-left: -4px;
+        }
+
+        section:hover {
+            border-color: red;
+            z-index: 0;
+        }
+
+        section:nth-child(3n+1) {
+            /*清除1,4,7单元格的margin-left: -4px偏移*/
+            margin-left: 0;
+        }
+    </style>
+</head>
+<body>
+<article class="grid">
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+    <section>5</section>
+    <section>6</section>
+    <section>7</section>
+    <section>8</section>
+    <section>9</section>
+</article>
+</body>
+</html>

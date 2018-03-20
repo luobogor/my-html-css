@@ -5,10 +5,10 @@
     <title>float</title>
     <style>
         /*提示*/
-        /*border负边距*/
-        /*z-index*/
+        /*负外边距*/
+        /*flex子元素如果z-index不为auto会形成堆叠上下文*/
         /*box-sizing*/
-        /*css选择器*/
+        /*css孩子选择器*/
         /*消除所有元素的边距*/
 
         html, body * {
@@ -48,7 +48,7 @@
             z-index: 2;
         }
 
-        li:nth-child(3n+1){
+        li:nth-child(3n+1) {
             /*清除1,4,7单元格的margin-left: -4px偏移*/
             margin-left: 0;
         }
@@ -70,22 +70,22 @@
 </div>
 
 <!--<div style="margin-top: 20px">-->
-    <!--<div style="display:inline-block; width: 100px;border: 1px solid #000;">-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
-            <!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
-            <!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
-    <!--</div>-->
+<!--<div style="display:inline-block; width: 100px;border: 1px solid #000;">-->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
+<!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
+<!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
+<!--</div>-->
 
-    <!--<div style="display:inline-block;width: 200px;border: 1px solid #000;">-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
-            <!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
-            <!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
-    <!--</div>-->
-    <!--<div style="display:inline-block;width: 200px;border: 1px solid #000;">-->
-        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
-            <!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
-            <!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
-    <!--</div>-->
+<!--<div style="display:inline-block;width: 200px;border: 1px solid #000;">-->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
+<!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
+<!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
+<!--</div>-->
+<!--<div style="display:inline-block;width: 200px;border: 1px solid #000;">-->
+<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aspernatur expedita fugit laudantium,-->
+<!--molestiae veniam! A aliquam architecto culpa dicta dolorum eius, et eum eveniet fugiat id illum maxime modi-->
+<!--molestias nam nostrum numquam odio, officia quia quibusdam repudiandae ut?</p>-->
+<!--</div>-->
 <!--</div>-->
 </body>
 </html>

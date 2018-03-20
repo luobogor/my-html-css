@@ -1,28 +1,20 @@
+- resetCSS Normalize
 
-- strong与em
+reset.css 直接把所有的样式全部初始化了，
+Normalize.css 修正了一些bug及主流浏览器在渲染上的不一致，并保留了一些浏览器默认样式。
 
-   样式上 
-   
-   <b> bold 和<i> italic 它们分别指定粗体和斜体。
-   
-   语义上
-   
-   i 元素代表在普通文本中具有不同语态或语气的一段文本，某种程度上表明一段不同特性的文本，比如一个分类学名称，一个技术术语，一个外语习语，一个音译，一个想法，或者西方文本中的一艘船名。
-   
-   
-   <strong> 不仅样式上表现粗体，阅读器会以低沉语气读出，表示内容的重要性
-   <strong> 标签和 <em> 标签一样，用于强调文本，但它强调的程度更强一些。em 默认用斜体表示，strong 用粗体表示
-   
-   
-   
+- 有些浏览器不完全支持css3，现在可以用哪个工具去检测浏览器是否支持，以及支持哪些项？
+
+Modernizr.js
+
+
 - 页面导入样式时，使用link和@import有什么区别？
-
 
 		（1）link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;
 
 		（2）页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载;
 
-		（3）import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题;
+		（3）link兼容性比import好;
 		
 - title与h1的区别、b与strong的区别、i与em的区别？
 
@@ -43,3 +35,10 @@
 - rem与em的区别
 
     rem相对于根元素大小，em相对于父元素大小
+   
+   
+- href与src的区别
+
+    src用于替换当前元素，href用于在当前文档和引用资源之间确立联系 relation = "stylesheet"
+    
+    script脚本阻塞，link非阻塞 
