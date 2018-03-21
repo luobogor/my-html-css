@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background</title>
+    <style>
+        i::after {
+            border: 10px solid lightcoral;
+            padding: 10px;
+            /*伪元素默认是inline*/
+            display: block;
+            /*伪元素必须有内容宽高设置才有效，即使将display设成block也不例外*/
+            content: ' ';
+            height: 400px;
+            width: 400px;
+            /*拉伸图片适应元素大小*/
+            /*background-size: cover;*/
+            /*在不改变图片比例的情况下，使图片全部显示*/
+            background-size: contain;
+            background-color: lightseagreen;
+            background-repeat: no-repeat;
+            /*在偏移38px,y轴居中*/
+            background-position: 38px center;
+            background-image: url(./TestPic.jpeg);
+        }
+    </style>
+</head>
+<body>
+<i></i>
+</body>
+</html>
