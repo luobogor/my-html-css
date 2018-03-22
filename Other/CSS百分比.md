@@ -12,7 +12,7 @@ px 像素与屏幕的DPI(像素密度)的值有关 em,rem，百分比
 
 #### 百分比计算方式
 计算方式
-基于父块的宽度来计算的属性：width，left，right，margin，padding
+基于父块的宽度来计算的属性：width，left，right，margin，padding（不管是top/bottom还是left/right）
 基于父块的高度来计算的属性：height,top，bottom
 基于当前字体大小来计算的属性：line-height，但如果当前元素没有设置line-height,而父元素有设置，则继承父元素计算后的数字
 

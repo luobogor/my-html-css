@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vertical-align</title>
+    <style>
+        img.top {
+            vertical-align: text-top;
+        }
+
+        img.bottom {
+            vertical-align: text-bottom;
+        }
+
+        img.middle {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<!--CSS 的属性 vertical-align 用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式。-->
+<!--初始值baseline-->
+
+<div>An <img src="TestPic.jpeg" alt="link" width="80" height="80"/> image with a default(baseline) alignment.</div>
+
+<div>An <img class="top" src="TestPic.jpeg" alt="link" width="80" height="80"/> image with a text-top alignment.</div>
+
+<div>An <img class="bottom" src="TestPic.jpeg" alt="link" width="80" height="80"/> image with a text-bottom alignment.
+</div>
+
+<div>An <img class="middle" src="TestPic.jpeg" alt="link" width="80" height="80"/> image with a middle alignment.</div>
+
+<table border="1" width="180px">
+    <tr>
+        <th>i am header</th>
+    </tr>
+    <tr>
+        <td style="height: 100px;vertical-align: bottom">hahaha</td>
+    </tr>
+</table>
+
+<!--详解-->
+<!--http://www.cnblogs.com/starof/p/4512284.html-->
+</body>
+</html>

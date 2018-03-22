@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中布局</title>
+</head>
+<body>
+
+<style>
+    #wrapper1 {
+        display: table;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    #wrapper1 .cell {
+        background-color: lightgrey;
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    #wrapper1 .content {
+        background-color: lightseagreen;
+    }
+
+    /*优点：content 可以动态改变高度*/
+    /*Internet Explorer(甚至 IE8 beta)中无效，许多嵌套标签*/
+
+</style>
+
+<div id="wrapper1">
+    <div class="cell">
+        方法1
+        <div class="content">
+            <ul>
+                <li class="good">Everything in this table cell div is centred</li>
+                <li class="good">It can dynamically change to any height based on content (try by changing your browser
+                    font size)
+                </li>
+                <li class="good">Doesn’t get cut off when there isn't enough room</li>
+                <li class="bad">Doesn’t work in Internet Explorer</li>
+                <li class="bad">Uses 2 extra <code>div</code>s</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    #wrapper2 {
+        height: 300px;
+        margin-bottom: 20px;
+        position: relative;
+        background-color: lightgrey;
+    }
+
+    #wrapper2 .content {
+        background-color: lightseagreen;
+        position: absolute;
+        top: 50%;
+        /*设置top50%，子元素顶线在父元素中线的位置，子元素要向上移动自身一半的距离才能做到垂直居中的效果*/
+        height: 80px;
+        /* 40 = 80/2 */
+        margin-top: -40px;
+        overflow: auto;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        /*优点：适用于所有浏览器*/
+        /*缺点:内容超出后会溢出，要用overflow:auto处理*/
+    }
+</style>
+
+<div id="wrapper2">
+    方法2
+    <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam cum deleniti ducimus in minima modi
+        nesciunt officia quo repellat, rerum, similique ut voluptatem? Error explicabo itaque officia, omnis
+        perferendis recusandae velit vitae? Aspernatur beatae consequuntur corporis delectus, eius harum iusto minus
+        obcaecati, officia quae quidem, reprehenderit sequi tempora totam?Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Dicta, dolorum, esse explicabo facilis illo illum, ipsum iste libero natus obcaecati
+        perspiciatis praesentium provident quam quasi repellendus sunt ut vitae voluptatibus?
+    </div>
+</div>
+
+<style>
+    #wrapper3 {
+        background-color: lightgrey;
+        position: relative;
+        height: 300px;
+        margin-bottom: 20px;
+    }
+
+    #wrapper3 .content {
+        background-color: lightseagreen;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        /*有固定高度时垂直方向上可以用margin auton居中*/
+        margin: auto;
+        width: 70%;
+        height: 230px;
+    }
+</style>
+
+<!--优点：-->
+
+<!--简单-->
+<!--缺点：-->
+
+<!--IE8中无效-->
+<!--无足够空间时，content 被截断，但是不会有滚动条出现-->
+
+<div id="wrapper3">
+    方法3
+    <div class="content">
+        dolore doloribus enim est eum excepturi id illum ipsa ipsum molestias necessitatibus nulla obcaecati officia
+        omnis optio qui quia quidem repellendus sint sunt tempora ut vel velit, veniam! Ab dignissimos dolorum hic
+        modi
+        voluptatibus?
+    </div>
+</div>
+
+
+<style>
+    #wrapper4 {
+        background-color: lightgrey;
+        margin-bottom: 20px;
+    }
+
+    #wrapper4 .content {
+        background-color: lightseagreen;
+        height: 100px;
+        line-height: 100px;
+    }
+</style>
+<div id="wrapper4">
+    <div class="content">
+        这个方法只能将单行文本置中。只需要简单地把 line-height 设置为那个对象的 height 值就可以使文本居中了。
+    </div>
+</div>
+
+<!--优点：-->
+<!--适用于所有浏览器-->
+<!--无足够空间时不会被截断-->
+<!--缺点：-->
+<!--只对文本有效(块级元素无效)-->
+<!--多行时，断词比较糟糕-->
+
+
+<!--flexbox完美解决方案-->
+<style>
+    #wrapper5 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 300px;
+        background-color: lightgrey;
+        margin-bottom: 20px;
+    }
+
+    #wrapper5 .content {
+        background-color: lightseagreen;
+        max-width: 300px;
+    }
+</style>
+<div id="wrapper5">
+    <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam dicta distinctio enim laborum minima modi
+        quaerat? Adipisci dignissimos eius eos ipsa modi nam numquam optio perferendis possimus provident quae quisquam
+        quo similique, soluta tempora tempore voluptatem. Atque aut dolores earum eligendi explicabo impedit ipsum,
+    </div>
+</div>
+
+
+<style>
+
+    #wrapper6 {
+        display: grid;
+        grid-template-columns: auto 300px auto;
+        grid-template-rows: auto 300px auto;
+        width: 100%;
+        height: 400px;
+        background-color: lightgrey;
+    }
+
+    #wrapper6 .content {
+        /*将当前元素放置于第2列*/
+        grid-column: 2;
+        /*将当前元素放置于第2行*/
+        grid-row: 2;
+        background-color: lightseagreen;
+    }
+
+</style>
+
+<div id="wrapper6">
+    <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam beatae dolorem earum et, eum, fugiat impedit
+        ipsum modi nihil odit officiis omnis repudiandae sapiente sit? Adipisci consectetur, cum cupiditate dicta eos
+    </div>
+</div>
+
+</body>
+</html>
