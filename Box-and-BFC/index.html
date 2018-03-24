@@ -18,7 +18,7 @@
         .parent {
             /*不加overflow: hidden,parent的高度是100px*/
             /*加上overflow: hidden,parent的高度是110px*/
-            /*因为overflow: hidden;触发创建了一个BFC，使parent与child不在同一个BFC*/
+            /*因为overflow: hidden;触发创建了一个BFC，使child与parent的parent不在同一个BFC*/
             overflow: hidden;
             background-color: burlywood;
         }

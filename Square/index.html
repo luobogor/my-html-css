@@ -58,6 +58,7 @@
 
         #padding .box, .padding.box {
             padding-bottom: 20%;
+            height: 0;
         }
 
         #margin .box:after, .margin.box:after {
@@ -71,6 +72,7 @@
         }
 
         #maxheight .box:before {
+            /*attr(class);表示内容为当前元素的class*/
             content: attr(class);
             position: absolute;
             top: 0;
@@ -90,7 +92,7 @@
 </section>
 <section id="padding">
     <h1>自身设定 padding-bottom</h1>
-    <div class="box"></div>
+    <div class="box">123</div>
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>

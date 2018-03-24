@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过伪类的margin撑起自身</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <style>
+        .content {
+            background-color: lightseagreen;
+            width: 100%;
+            /*触发BFC使伪元素的marin-top可以撑开当前元素的高度*/
+            overflow: hidden;
+        }
+
+        .content::after {
+            content: '';
+            display: block;
+            /*原理：margin与padding是以父元素的宽度为基准计算百分比*/
+            /*这里使用 margin-top: 100%;margin-bottom: 100%;paddin-top: 100%;padding-bottom: 100%; 都是可以的*/
+            margin-top: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content"></div>
+<!--缺点：文字内容会使高度发生变化-->
+</body>
+</html>
