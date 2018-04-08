@@ -10,7 +10,7 @@
             background-color: lightseagreen;
             width: 100%;
             /*触发BFC使伪元素的marin-top可以撑开当前元素的高度*/
-            overflow: hidden;
+            /*overflow: hidden;*/
         }
 
         .content::after {
@@ -18,7 +18,8 @@
             display: block;
             /*原理：margin与padding是以父元素的宽度为基准计算百分比*/
             /*这里使用 margin-top: 100%;margin-bottom: 100%;paddin-top: 100%;padding-bottom: 100%; 都是可以的*/
-            margin-top: 100%;
+            /*如果使用margin-top: 100%;或者 margin-bottom: 100%;则需要在.content中加上overflow: hidden;*/
+            padding-bottom: 100%;
         }
 
     </style>

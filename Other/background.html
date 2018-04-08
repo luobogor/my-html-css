@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>background</title>
     <style>
-        i::after {
+        .my-icon::after {
             border: 10px solid lightcoral;
             padding: 10px;
             /*伪元素默认是inline*/
@@ -13,9 +13,12 @@
             content: ' ';
             height: 400px;
             width: 400px;
+
+            /**background-size: x横向拉伸大小 y纵向拉伸大小*/
             /*拉伸图片适应元素大小*/
             /*background-size: cover;*/
-            /*在不改变图片比例的情况下，使图片全部显示*/
+
+            /*在不改变图片比例的情况下，把图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域，注意，这里只是自动适应内容区域，不是把图片全部显示出来*/
             background-size: contain;
             background-color: lightseagreen;
             background-repeat: no-repeat;
@@ -26,6 +29,6 @@
     </style>
 </head>
 <body>
-<i></i>
+<i class="my-icon"></i>
 </body>
 </html>
