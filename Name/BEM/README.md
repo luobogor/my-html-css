@@ -32,13 +32,15 @@
 命名空间定义 block 间的关系，这种方式网站上还没有大范围使用，最常见的如 .js－ 表示定义 JavaScript 钩子，不用于定义样式。常见命名空间：
 
 - js-：表示一个 JavaScript 钩子。如 .js-modal。
-- is-，has-：表示一种状态或条件样式。如 .is-active
-- c-：表示一个组件（Component），指一个具体的、特定实现的 UI。如 .c-avatar。
-- o-：表示一个对象（Object），如 .o-layout。
+- is-，has-：表示一种状态或条件样式。如 .is-active .has-loaded
+- c-：表示一个组件（Component），指一个具体的、特定实现的 UI。如 .c-avatar .c-card .c-checklist
 - t-：表示一个主题（Theme），如 .t-light。
+- u-: 工具类，比如u-hide
+- a-: 属性类 比如a-mt8
 - s-：表示一个上下文或作用域（Scope），如 .s-cms-content。
 - _：表示一个 hack，如 ._important。
 - qa-：表示测试钩子。
+
 
 ### example
 - modal头部 .modal-hd, modal 标题 .modal-tt
@@ -69,12 +71,78 @@
 - 方向类：up, down, left, right
 - 其他语义类：btn, close, ok, cancel, switch; link, title, info, intro, more, icon; form, label, search, contact, phone, date, email, user; view, loading...
 
+## Example
+
+一个Block下应该是多个Element，Element不能嵌套
+
+````html
+<!-- DO THIS -->
+<figure class="photo">
+  <img class="photo__img" src="me.jpg">
+  <figcaption class="photo__caption">
+    <blockquote class="photo__quote">
+      Look at me!
+    </blockquote>
+  </figcaption>
+</figure>
+
+<style>
+  .photo { }
+  .photo__img { }
+  .photo__caption { }
+  .photo__quote { }
+</style>
+
+
+<!-- DON'T DO THIS -->
+<figure class="photo">
+  <img class="photo__img" src="me.jpg">
+  <figcaption class="photo__caption">
+    <blockquote class="photo__caption__quote"> <!-- never include more than one child element in a class name -->
+      Look at me!
+    </blockquote>
+  </figcaption>
+</figure>
+
+<style>
+  .photo { }
+  .photo__img { }
+  .photo__caption { }
+  .photo__caption__quote { }
+</style>
+````
+
+````html
+<!-- DO THIS -->
+<style>
+    .block__list{
+    
+    }
+    
+    .block__list-item{
+    
+    }
+</style>
+
+<!-- DON'T DO THIS -->
+<style>
+    .block__list{
+    
+    }
+    
+    .block__list__item{
+    
+    }
+</style>
+````
+
 ## 线束语
-BEM最难的部分之一是明确作用域是从哪开始和到哪结束的，以及什么时候使用（不使用）它。随着接触的多了，有了经验积累，你慢慢就会知道怎么用，这些问题也不再是问题。著作权归作者所有。
+BEM最难的部分之一是明确作用域是从哪开始和到哪结束的，以及什么时候使用（不使用）它。随着接触的多了，有了经验积累，你慢慢就会知道怎么用，这些问题也不再是问题
 
 ## 参考
 [BEM思想之彻底弄清BEM语法](https://www.w3cplus.com/css/mindbemding-getting-your-head-round-bem-syntax.html)
 [什么鬼，又不知道怎么命名class了](https://www.w3cplus.com/css/css-class-name.html)
 [CSS 命名规范总结](https://jiandanxinli.github.io/2016-08-11.html)
-
+[BEM Example](https://seesparkbox.com/foundry/bem_by_example)
+[响应式命名](https://www.smashingmagazine.com/2016/06/battling-bem-extended-edition-common-problems-and-how-to-avoid-them/)
 
