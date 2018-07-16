@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>平行四边形</title>
+    <style>
+        .button {
+            position: relative;
+            background: transparent;
+            /*其他属性*/
+            display: inline-block;
+            padding: .5em 1em;
+            border: 0;
+            margin: .5em;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font: bold 200%/1 sans-serif;
+        }
+
+        /*为宿主元素制造一个背景*/
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            background: #00b4fd;
+            transform: skew(45deg);
+        }
+    </style>
+</head>
+<body>
+<a href="#hello" class="button">
+    <div>Click me</div>
+</a>
+<button class="button">
+    <div>Click me</div>
+</button>
+</body>
+</html>

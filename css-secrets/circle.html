@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .responsive-ellipse {
+            background: #fb3;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            /*等价于*/
+            /*border-radius: 水平半径 50% 宽 /  垂直半径 50% 高*/
+        }
+
+        .half-ellipse {
+            background: #fb3;
+            height: 100px;
+            width: 100px;
+            border-radius: 50% / 100% 100% 0 0;
+            /*等价于*/
+            /*border-radius: 50% 50% 50% 50% / 100% 100% 0 0;*/
+        }
+    </style>
+</head>
+<body>
+<div class="responsive-ellipse"></div>
+</body>
+</html>
