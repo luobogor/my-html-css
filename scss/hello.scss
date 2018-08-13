@@ -1,0 +1,66 @@
+$namespace: 'el';
+$element-separator: '__';
+$modifier-separator: '--';
+$state-prefix: 'is-';
+
+/* BEM
+ -------------------------- */
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
+
+  // #{} 插值语法在选择器和属性名中使用 SassScript 变量
+  .#{$B} {
+    @content;
+  }
+}
+
+@include b(select) {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    .el-input__inner {
+      border-color: #fff;
+    }
+  }
+}
+
+//可以用作 when(active) when(min) 等等
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+.el-input {
+  & .el-select__caret {
+    color: #fff;
+    @include when(reverse) {
+      transform: rotateZ(0deg);
+    }
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+@include b(input) {
+  @include m(suffix) {
+    .el-input__inner {
+      padding-right: 30px;
+    }
+  }
+}

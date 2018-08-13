@@ -14,7 +14,7 @@
     ````
 - 定义变量
 
-- 多列布局
+- 多列文本布局
 
 - 动画 animation,transition,transform rotate(旋转) scale(绽放)  translate(位移)
 
