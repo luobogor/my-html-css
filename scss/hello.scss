@@ -64,3 +64,12 @@ $state-prefix: 'is-';
     }
   }
 }
+
+.icon {
+  background-color: #ffffff;
+  /* & 只能在开头使用，如果在其他地方使用需要使用#{}作引用 */
+  &#{&}-small {
+    font-size: 14px;
+  }
+}
+

@@ -1,24 +1,22 @@
 /* BEM
  -------------------------- */
 .el-select {
-    display: inline-block;
-    position: relative;
-}
-
-.el-select:hover .el-input__inner {
-    border-color: #fff;
-}
+  display: inline-block;
+  position: relative; }
+  .el-select:hover .el-input__inner {
+    border-color: #fff; }
 
 .el-input .el-select__caret {
-    color: #fff;
-}
-
-.el-input .el-select__caret.is-reverse {
-    transform: rotateZ(0deg);
-}
+  color: #fff; }
+  .el-input .el-select__caret.is-reverse {
+    transform: rotateZ(0deg); }
 
 .el-input--suffix .el-input__inner {
-    padding-right: 30px;
-}
+  padding-right: 30px; }
+
+.icon {
+  background-color: #ffffff; }
+  .icon.icon-small {
+    font-size: 14px; }
 
 /*# sourceMappingURL=hello.css.map */
