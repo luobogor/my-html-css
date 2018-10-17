@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取盒子宽高</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            padding: 10px;
+            background: burlywood;
+            border: 30px solid lightcoral;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+const dom = document.getElementById('box');
+console.log('dom.style.width/height:', dom.style.width, ' ', dom.style.height);
+console.log('window.getComputedStyle(dom).width/height', window.getComputedStyle(dom).getPropertyValue('width'), window.getComputedStyle(dom).getPropertyValue('height'));
+const p = dom.getBoundingClientRect();
+console.log('dom.getBoundingClientRect():', p.width, ' ', p.height);
+console.log('offsetXXX', dom.offsetWidth, ' ', dom.offsetHeight);
+
+</script>
+</html>

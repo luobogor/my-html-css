@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>line-height</title>
+    <style>
+        /*当你（对某个属性）使用不带单位的数字，声明的值会被继承，也就是说这个值会在子元素中用来重新计算子元素域下的值，而这个通常是你想要的效果。使用不带单位的数字，可以让你在body上设定一个行高，然后什么都不用管，页面上其他元素会默认继承，除非在某个特定的地方你想要做一个额外的样式。*/
+        body {
+            line-height: 1.2;
+        }
+
+        /*当一个元素是用带单位的值声明的，那么它的后代元素会继承计算结果值。当行高属性是用类似em来声明时，它的值会先被计算，然后计算后的值会传到任何继承它的后代元素。*/
+        /*body {
+            line-height: 1.2em;
+        }*/
+
+        /*简单来说就是带单位的先计算后继承计算结果，不带单位的先继承后计算*/
+
+        .about-us {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<p class="about-us">
+    We have built partnerships with small farms around the world to
+    hand-select beans at the peak of season. We then carefully roast in
+    small batches to maximize their potential.
+</p>
+</body>
+</html>

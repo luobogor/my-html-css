@@ -18,7 +18,10 @@
         .parent {
             /*不加overflow: hidden,parent的高度是100px*/
             /*加上overflow: hidden,parent的高度是110px*/
-            /*因为overflow: hidden;触发创建了一个BFC，使child与parent的parent不在同一个BFC*/
+            /*因为同一个BFC内垂直方向的margin合并现象，所有挨着的两个或者多个盒元素的margin会合并为一个margin并共享*/
+            /*当一个元素包含在另一个元素中时（如没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。*/
+            /*https://upload-images.jianshu.io/upload_images/4994499-a678074251093cbe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/920/format/webp*/
+            /*因为overflow: hidden;触发创建了一个BFC，使child与parent的parent不在同一个BFC （根元素一个BFC, 父元素一个BFC）*/
             overflow: hidden;
             background-color: burlywood;
         }

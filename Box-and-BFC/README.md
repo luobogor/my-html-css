@@ -22,8 +22,9 @@
 ## JS获取元素宽高
 - dom.style.width/height 只能取内联样式的宽高
 - dom.currentStyle.width/height 获取渲染后的宽高，不过只有IE有这个属性
-- window.getComputedStyle(dom).width/height 兼容Chrome,Firefox
-- dom.getBoundingClientRect().width/height
+- window.getComputedStyle(dom).width/height 兼容Chrome,Firefox(content-box时获取content宽高,border-box时连同padding、border一直计算)
+- dom.getBoundingClientRect().width/height (无论是 content-box 还是 border-box，都是连同padding、border一直计算)
+- dom.offsetWidth,dom.offsetHeight (与getBoundingClientRect计算结果相同)
 
 ## BFC
 BFC定义：块级格式化上下文，它是指一个独立的块级渲染区域，只有Block-level Box参与，该区域拥有一套渲染规则来约束块级盒子的布局，且与区域外部无关。
@@ -40,7 +41,8 @@ BFC定义：块级格式化上下文，它是指一个独立的块级渲染区�
 > 注：也有人认为display: table能生成BFC，最主要原因是table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生成了BFC。
 
 ### 应用
-1. 元素垂直方向的距离由margin决定，即属于同一个BFC的两个相邻盒子的margin可能会发生重叠
+0. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+1. 属于同一个BFC的元素会发生边距重叠，无论是兄弟元素、还是父子元素
 2. BFC的区域不会与float元素区域重叠
 3. 计算BFC的高度时，浮动子元素也参与计算（清浮动）
 
