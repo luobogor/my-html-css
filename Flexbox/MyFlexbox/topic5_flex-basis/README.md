@@ -1,4 +1,4 @@
-# flex-basic
+# flex-basis
 - 默认值0%;任何可用于 width 和 height 的值都可接受
 - flex-basis 指定了 flex 元素在`主轴方向`上的初始大小
 - 推荐写法
@@ -12,11 +12,11 @@
 .flex-child{
     flex-grow:1;
     flex-shrink:0;
-    flex-basic: 300px;
+    flex-basis: 300px;
 }
 ````
 
-- 当flex-flow: column时,flex-basic:100px相当于设置了min-height:100px
+- 当flex-flow: column时,flex-basis:100px相当于设置了min-height:100px
 
 ````
 当 flex 取值为 none，则计算值为 0 0 auto，如下是等同的：
@@ -53,4 +53,4 @@ content –> width –> flex-basis (limted by max|min-width)
 
 - 如果没有设置flex-basis属性，那么flex-basis的大小就是项目的width属性的大小
 - 如果没有设置width属性，那么flex-basis的大小就是项目内容(content)的大小
-- 同时设置 width 和 flex-basis 时，取 flex-basis 的值，但是 min-width 与 max-width 又可以限制 flex -basic
+- 同时设置 width 和 flex-basis 时，取 flex-basis 的值，但是 min-width 与 max-width 又可以限制 flex -basis

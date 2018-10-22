@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>float</title>
+    <title>九宫格</title>
     <style>
         /*提示*/
         /*负外边距*/
@@ -22,6 +22,7 @@
             flex-wrap: wrap;
             /*清除1,2,3单元格的margin-top: -4px偏移*/
             padding-top: 4px;
+            padding-left: 4px;
         }
 
         ul {
@@ -45,13 +46,14 @@
 
         li:hover {
             border-color: red;
-            z-index: 2;
+            z-index: 1;
         }
 
-        li:nth-child(3n+1) {
-            /*清除1,4,7单元格的margin-left: -4px偏移*/
-            margin-left: 0;
-        }
+        /*打开这个注释，将 .grid 里的 padding-left 去掉，同样可以实现*/
+        /*li:nth-child(3n+1) {*/
+            /*!*清除1,4,7单元格的margin-left: -4px偏移*!*/
+            /*margin-left: 0;*/
+        /*}*/
     </style>
 </head>
 <body>
