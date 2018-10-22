@@ -1,5 +1,6 @@
 # justify-content
 - 注意:只要有一个子元素出现flex-grow,那么父元素设置的justify-content可以看作无效。因为flex-grow将剩余的空间都占满了。
+
 ````
 @media screen and (min-width: 768px){
     nav ul{

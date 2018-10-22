@@ -20,5 +20,4 @@ article 是一个特殊的 section 标签，它比 section 具有更明确的语
 ### 总结
 div 无任何语义，仅仅用作样式化或者脚本化的钩子(hook)，对于一段主题性的内容，则就适用section，而假如这段内容可以脱离上下文，作为完整的独立存在的一段内容，则就适用 article。
 
-来源：[HTML5 中 div section article 的区别
-](https://www.qianduan.net/html5-differences-in-the-div-section-article/)
+来源：[HTML5 中 div section article 的区别](https://www.qianduan.net/html5-differences-in-the-div-section-article/)
