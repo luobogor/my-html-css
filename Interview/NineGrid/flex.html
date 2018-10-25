@@ -46,7 +46,9 @@
 
         li:hover {
             border-color: red;
-            z-index: 1;
+            /*一个被设置了display:flex的元素包含的元素对其设置z-index为数值时其会产生层叠上下文*/
+            /*又由于该层叠上下文在根元素层叠上下文之上(根元素默认z-index为auto，可以看作为0)，所以 hover 的 li 在上层*/
+            z-index: 0;
         }
 
         /*打开这个注释，将 .grid 里的 padding-left 去掉，同样可以实现*/
