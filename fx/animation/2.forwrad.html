@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>animation-fill-mode:forwrad</title>
 
     <style>
         @keyframes rainbow {
@@ -17,10 +17,10 @@
             border: 1px solid black;
         }
 
-        div:hover{
+        /*可以不通过事件，页面加载时自动触发动画*/
+        div {
             /*动画结束以后，会立即从结束状态跳回到起始状态。如果想让动画保持在结束状态，需要使用animation-fill-mode属性。*/
-            -webkit-animation: 1s rainbow forwards;
-            animation: 1s rainbow forwards;
+            animation: 3s rainbow forwards;
             /*（1）none：默认值，回到动画没开始时的状态。*/
 
                     /*（2）backwards：让动画回到第一帧的状态。*/

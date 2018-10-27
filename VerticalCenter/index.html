@@ -16,6 +16,7 @@
     #wrapper1 .cell {
         background-color: lightgrey;
         display: table-cell;
+        /*vertical-align 用来指定行内元素（inline）或表格单元格（table-cell）元素的垂直对齐方式*/
         vertical-align: middle;
     }
 
@@ -28,9 +29,10 @@
 
 </style>
 
+
+方法1
 <div id="wrapper1">
     <div class="cell">
-        方法1
         <div class="content">
             <ul>
                 <li class="good">Everything in this table cell div is centred</li>
@@ -58,10 +60,12 @@
         background-color: lightseagreen;
         position: absolute;
         top: 50%;
-        /*设置top50%，子元素顶线在父元素中线的位置，子元素要向上移动自身一半的距离才能做到垂直居中的效果*/
+        /*!*设置top50%，子元素顶线在父元素中线的位置，子元素要向上移动自身一半的距离才能做到垂直居中的效果*!*/
         height: 80px;
-        /* 40 = 80/2 */
+        /*!* 40 = 80/2 *!*/
         margin-top: -40px;
+        /*或者使用 css3 calc 方法计算距离*/
+        /*top: calc(50% - 40px);*/
         overflow: auto;
         width: 70%;
         margin-left: auto;
@@ -98,7 +102,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        /*有固定高度时垂直方向上可以用margin auton居中*/
+        /*有固定高度时垂直方向上可以用margin auto居中*/
         margin: auto;
         width: 70%;
         height: 230px;

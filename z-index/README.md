@@ -28,8 +28,9 @@
 	- 根元素（即html元素）
 	- z-index 值不为 "auto"的 绝对/相对定位，
 	- position: fixed
-	- 一个被设置了display:flex的元素包含的元素对其设置z-index为数值时其会产生层叠上下文
-		
+	- 一个 z-index 值不为 "auto"的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex，
+    - opacity 属性值小于 1 的元素
+    		
 - 7阶层叠水平
 >重要性：内容>布局>装饰
 ![](https://ws4.sinaimg.cn/large/006tNbRwgy1fmqsaj9b5ij30pn0gy42v.jpg)
