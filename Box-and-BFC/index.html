@@ -59,7 +59,7 @@
 </section>
 
 
-<!--2.BFC不与float重叠(解决侵占浮动元素的问题)-->
+<!--2.BFC不与float重叠(解决侵占浮动元素的问题，也仅是解决侵占浮动元素，未达到清浮动效果)-->
 <!--这一特性，我认为还是很有用的，特别是应用在两栏布局上，对比我们常规为非浮动元素或非定位元素设置margin来挤开的方法，其优点在于不需要去知道浮动或定位元素的宽度。-->
 <section id="layout">
     <style>
@@ -82,8 +82,8 @@
             overflow: auto;
         }
     </style>
-    <div class="left">我在左边</div>
-    <div class="right">我在右边</div>
+    <div class="left">我在左边的Float</div>
+    <div class="right">我是右边的BFC</div>
 </section>
 
 
@@ -108,7 +108,5 @@
     </div>
     Hello,World
 </section>
-
-
 </body>
 </html>

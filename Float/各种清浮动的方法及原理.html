@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>各种清浮动的方法及原理</title>
+</head>
+<body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .outer {
+        border: 1px solid #ccc;
+        background: #fc9;
+        color: #fff;
+        padding: 50px;
+    }
+
+    .div1 {
+        width: 80px;
+        height: 80px;
+        background: red;
+        float: left;
+    }
+
+    .div2 {
+        width: 80px;
+        height: 80px;
+        background: blue;
+        float: left;
+    }
+
+    .div3 {
+        width: 80px;
+        height: 80px;
+        background: sienna;
+        float: left;
+    }
+
+    .method1 .clear {
+        clear: both;
+    }
+</style>
+方法一，直接加一个 clear: both 类，clear: both 是 css 提供用于清浮动的属性
+<div class="outer method1">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="clear"></div>
+</div>
+
+
+<style>
+    .method2 {
+        overflow: auto;
+    }
+</style>
+方法二，将父元素变成BFC
+<div class="outer method2">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+</div>
+
+
+<style>
+    .method3::after {
+        content: ' ';
+        display: table;
+        clear: both;
+    }
+</style>
+方法三，伪元素 + clear:both
+<div class="outer method3">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+</div>
+</body>
+</html>

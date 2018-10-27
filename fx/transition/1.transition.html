@@ -6,17 +6,13 @@
     <style>
         img{
             width:200px;
+            /*过渡时间 过渡属性(不指定则全部属性都有过渡效果)*/
+            /*只有height的变化需要1秒实现，其他变化（主要是width）依然瞬间实现*/
+            transition: 1s width;
         }
 
         img:hover{
             width: 450px;
-        }
-
-        /*不加这句图片会瞬间放大没有过渡*/
-        img{
-            /*过渡时间 过渡属性(不指定则全部属性都有过渡效果)*/
-            /*只有height的变化需要1秒实现，其他变化（主要是width）依然瞬间实现*/
-            transition: 1s width;
         }
     </style>
 </head>
