@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>nth</title>
     <style>
         /*选取p的父元素下，既是p，而且还是位置第二个位置的孩子*/
         p:nth-child(2) {
@@ -16,14 +16,13 @@
     </style>
 </head>
 <body>
+<h1>nth-of-child：查找位置优先 nth-of-type：查找元素优先</h1>
 <section>
     <h2>haha</h2>
     <!--<h3>加上我后p:nth-child(2)选取不到p</h3>-->
     <p>我是第1个p标签</p>
-    <p>我是第2个p标签</p>  <!-- 希望这个变红 -->
+    <p>我是第2个p标签</p>
 </section>
-
-
 
 <style>
     .list img {
@@ -34,7 +33,7 @@
     }
 
     /*p与:之间不能有空格*/
-    .list > p:nth-child(even) img{
+    .list > p:nth-child(even) img {
         background: red;
     }
 

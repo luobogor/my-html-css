@@ -41,4 +41,37 @@ Modernizr.js
 
     src用于替换当前元素，href用于在当前文档和引用资源之间确立联系 relation = "stylesheet"
     
-    script脚本阻塞，link非阻塞 
+    script脚本阻塞，link非阻塞
+    
+    
+- translate内部机制。不会涉及重排重绘
+    
+`````css
+//两段代码的区别，哪个更好
+#elem{
+    position:absolute;
+    top:30px;
+    left:100px;
+    animation: myAnimate easing 4s
+}
+
+@keyframe myAnimate{
+    50%{
+        transfrom: translate(100px 100px)
+    }
+}
+<!--  ——————  --!>
+#elem{
+    position:absolute;
+    top:30px;
+    left:100px;
+    animation: myAnimate easing 4s
+}
+
+@keyframe myAnimate{
+    50%{
+        top:130px;
+        left:200px
+    }
+}
+````` 
