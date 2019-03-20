@@ -30,7 +30,9 @@
 	- position: fixed
 	- 一个 z-index 值不为 "auto"的 flex 项目 (flex item)，即：父元素 display: flex|inline-flex，
     - opacity 属性值小于 1 的元素
-    		
+
+- overflow:auto 可能使 z-index 失效?
+
 - 7阶层叠水平
 >重要性：内容>布局>装饰
 ![](https://ws4.sinaimg.cn/large/006tNbRwgy1fmqsaj9b5ij30pn0gy42v.jpg)

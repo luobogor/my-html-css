@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>强制不换行</title>
+    <style>
+        .text-ellipsis {
+            overflow: hidden;
+            /* 当文字超过容器宽度时以省略号显示 ellipsis中文是省略号，必须配合overflow: hidden 使用 */
+            text-overflow: ellipsis;
+            /* white-space CSS 属性是用来设置如何处理元素中的空白。强制不换行 */
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<p class="text-ellipsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque cum eligendi exercitationem in, libero maxime minus nemo nisi numquam, odit quia reiciendis repellendus? Ab architecto at consequatur dicta ducimus eum ex expedita fuga impedit in laborum laudantium optio, possimus provident,
+    quis quod ratione reprehenderit sint totam, voluptas! Ducimus, repudiandae?</p>
+</body>
+</html>

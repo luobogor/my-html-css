@@ -56,5 +56,29 @@
         <p><img src="" alt="">blue</p>
     </div>
 </div>
+
+<style>
+    main :only-of-type {
+        color: red;
+    }
+
+    main :only-child {
+        color: lightseagreen;
+    }
+</style>
+
+<main>
+    <div>I am `div` #1.</div>
+    <p>I am the only `p` among my siblings.</p>
+    <div>I am `div` #2.</div>
+    <div>I am `div` #3.
+        <i>I am the only `i` child.</i>
+        <em>I am `em` #1.</em>
+        <em>I am `em` #2.</em>
+    </div>
+    <div>I am `div` #3.
+        <em>I am the only child.</em>
+    </div>
+</main>
 </body>
 </html>
