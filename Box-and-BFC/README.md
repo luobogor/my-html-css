@@ -13,12 +13,6 @@
 注意IE浏览下box-sizing默认为content-box，不是border-box，不要被IE模型混淆。
 在怪异模式下，box-sizing默认才为border-box
 
-#### 怪异模式&部分怪异模式
-不存在doctype或形式不正确会导致怪异模式。为了兼容老页面，浏览器使用自己的方式解析执行代码，因为不同浏览器解析执行的方式不一样，所以我们称之为怪异模式。
-
-部分怪异模式在标准模式与怪异模式之间妥协
-
-
 ## JS获取元素宽高
 - dom.style.width/height 只能取内联样式的宽高
 - dom.currentStyle.width/height 获取渲染后的宽高，不过只有IE有这个属性
@@ -54,10 +48,8 @@ BFC定义：块级格式化上下文，它是指一个独立的块级渲染区�
 ## 参考
 [CSS: 潜藏着的BFC](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651553261&idx=1&sn=5ca1a2a942d9943576fceacde8fc99ec&chksm=8025aa2cb752233a24002fc7b6755e4c1b1e336d6a3e0757b606718528a31931167f174a1d0b&scene=0&key=341be94069104575b318ad1886380c57ab496e27116321ca51c8e219e8cf132e61d99a5735ec1bb3f0503d35d103e039c963504ad7760d3e68c6d1f6da2fae47c1f5f440e52daddd08152d4726182b9a&ascene=0&uin=NjU4MTI5OTg1&devicetype=iMac+MacBookPro14%2C1+OSX+OSX+10.12.5+build(16F2073)&version=12020810&nettype=WIFI&fontScale=100&pass_ticket=Lti%2Fg%2Bng8AXqsUrVWicWjusA6np4NhWmSXpIWQk%2Bj24wMuoha5ALe2un0oZLkqYC)
 
-[CSS 101: Block Formatting Contexts
-](https://yuiblog.com/blog/2010/05/19/css-101-block-formatting-contexts/)
+[CSS 101: Block Formatting Contexts](https://yuiblog.com/blog/2010/05/19/css-101-block-formatting-contexts/)
 
-[CSS清除浮动的原理与最佳实践
-](http://blog.staynoob.cn/post/2016/05/css-float-clearfix-best-in-practice/)
+[CSS清除浮动的原理与最佳实践](http://blog.staynoob.cn/post/2016/05/css-float-clearfix-best-in-practice/)
 
 
