@@ -3,12 +3,13 @@
 
 这样，字号大小就变得可预测，而当其他因素影响到元素的字号大小时，你也可以借助em去缩放元素的padding和margin。在border上使用像素是很合适的，尤其当你想要一根漂亮的线的时候。以上就是我对不同属性使用不同单位的理想方案，不过我要再次声明，这些都是工具，在某些特定场景下，利用不同的工具可能取到更好的效果。
 
-## 参考 
-http://wuyuying.com/blog/archives/css-in-depth-relative-units/
+## rem 计算方式
+-
 
-https://www.zhangxinxu.com/wordpress/2016/08/vw-viewport-responsive-layout-typography/
+## em 计算方式
+- em 的基准值是当前元素的字号大小，比如当前 div 的 font-size 为 12px，padding 为 1em，那么 padding 最终计算结果为 12px
+- 如果 font-size 使用 em 单位，则按继承父标签计算。比如 ul 的 font-size: 16px，
+li 的 font-size 为 1.2em，那么 li 最终计算结果 1.2 * 16 = 19.2px
 
-### em 计算方式
-em的基准值是当前元素的字号大小，当font-size使用em作为单位时，在font-size上的em会先从继承到的字号大小衍生出来
-
-你已经使用过em声明font-size了（基于一个继承的字号大小值）。以及，你也曾经使用em声明其他属性，如padding和border-radius（基于当前元素的字号大小值）。当你针对同一个元素使用em声明font-size和其他属性的时候，em会变得很神奇。此时浏览器必须先计算font-size，然后基于这个值再去计算其他值。
+## 参考
+https://wuyuying.com/css-in-depth-relative-units/
