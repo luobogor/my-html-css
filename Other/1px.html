@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>1px物理像素方案1</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #box {
+      width: 0.5rem;
+      height: 0.5rem;
+      /*width: 200px;*/
+      /*height: 200px;*/
+      border-bottom: 1px solid #000;
+    }
+  </style>
+
+  <!--  像素比 = 物理像素 / css 像素-->
+</head>
+<body>
+<div id="box"></div>
+</body>
+<script>
+// https://www.youtube.com/watch?v=tG3XUvYxwIM&list=PLmOn9nNkQxJGoGBusVctyXOfqAFBmZ2tu&index=7
+
+window.onload = function () {
+  const dpr = window.devicePixelRatio
+  // 1px
+  const scale = 1/dpr
+
+  const metaNode = document.querySelector('meta[name="viewport"]')
+  metaNode.setAttribute('content',`width=device-width,initial-scale=${scale},user-scalable=no`)
+
+  const width = document.documentElement.clientWidth
+  const htmlNode = document.querySelector('html')
+  htmlNode.style.fontSize = width * dpr + 'px'
+}
+</script>
+</html>
