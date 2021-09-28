@@ -5,21 +5,17 @@
   <title>1px物理像素方案1</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
   <style>
-    * {
-      padding: 0;
-      margin: 0;
-    }
+  * {
+    padding: 0;
+    margin: 0;
+  }
 
-    #box {
-      width: 0.5rem;
-      height: 0.5rem;
-      /*width: 200px;*/
-      /*height: 200px;*/
-      border-bottom: 1px solid #000;
-    }
+  #box {
+    width: 2rem;
+    height: 2rem;
+    border-bottom: 1px solid #000;
+  }
   </style>
-
-  <!--  像素比 = 物理像素 / css 像素-->
 </head>
 <body>
 <div id="box"></div>
@@ -27,17 +23,23 @@
 <script>
 // https://www.youtube.com/watch?v=tG3XUvYxwIM&list=PLmOn9nNkQxJGoGBusVctyXOfqAFBmZ2tu&index=7
 
+// 其他方案
+// - 使用图片
+
 window.onload = function () {
+  <!--  像素比 dpr = 物理像素 / css 像素-->
   const dpr = window.devicePixelRatio
-  // 1px
+  // css 像素 = 1px * scale = 1px / dpr
   const scale = 1/dpr
+  const width = document.documentElement.clientWidth
 
   const metaNode = document.querySelector('meta[name="viewport"]')
   metaNode.setAttribute('content',`width=device-width,initial-scale=${scale},user-scalable=no`)
 
-  const width = document.documentElement.clientWidth
   const htmlNode = document.querySelector('html')
-  htmlNode.style.fontSize = width * dpr + 'px'
+  // 一般来说设计稿用 375，* 100 是为了方便计算，不考虑 1px 问题，默认字体大小是 100 * (width / 375)
+  // 反向乘回被缩小的倍数 1/scale，也就是 dpr
+  htmlNode.style.fontSize = 100 * (width / 375) * dpr + 'px'
 }
 </script>
 </html>
