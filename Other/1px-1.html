@@ -40,6 +40,9 @@ window.onload = function () {
   // 一般来说设计稿用 375，* 100 是为了方便计算，不考虑 1px 问题，默认字体大小是 100 * (width / 375)
   // 反向乘回被缩小的倍数 1/scale，也就是 dpr
   htmlNode.style.fontSize = 100 * (width / 375) * dpr + 'px'
+
+  // 不考虑 1px，考虑用户改变了默认字体的情况下保证 1rem=100px，用下面公式
+  // htmlNode.style.fontSize = 100 * (width / 375) * (16/用户设置的字体大小) + 'px'
 }
 </script>
 </html>
