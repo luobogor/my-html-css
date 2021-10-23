@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<button onclick="startDownload()">走你</button>
+</body>
+<script>
+let downloadedImg
+
+function startDownload() {
+  let imageURL = "https://cdn.glitch.com/4c9ebeb9-8b9a-4adc-ad0a-238d9ae00bb5%2Fmdn_logo-only_color.svg?1535749917189";
+
+  downloadedImg = new Image();
+  downloadedImg.crossOrigin = "Anonymous"; // 图片不设置 crossOrigin 属性，则不会发送 CORS 请求，也就是 HTTP 头部不设置 Origin 属性
+  downloadedImg.addEventListener("load", imageReceived, false);
+  downloadedImg.src = imageURL;
+}
+
+function imageReceived() {
+  let canvas = document.createElement("canvas");
+  let context = canvas.getContext("2d");
+
+  canvas.width = downloadedImg.width;
+  canvas.height = downloadedImg.height;
+
+  context.drawImage(downloadedImg, 0, 0);
+  document.body.appendChild(canvas);
+
+  try {
+    localStorage.setItem("saved-image-example", canvas.toDataURL("image/png"));
+  }
+  catch(err) {
+    console.log("Error: " + err);
+  }
+}
+</script>
+</html>
