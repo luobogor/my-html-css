@@ -46,7 +46,7 @@ div:hover {
 ````
 
 ### timing-function
-animation-timing-function与transition-timing-function不但可以设置变化速度类型，当使用cubic-bezier函数还可以设置轨迹超出极限位置。比如一些越界后再倒退的效果。
+animation-timing-function 与 transition-timing-function 不但可以设置变化速度类型，当使用cubic-bezier函数还可以设置轨迹超出极限位置。比如一些越界后再倒退的效果。
 
 ### animation-fill-mode:forwards 与 animation-play-state:paused
 animation-fill-mode:forwards动画播放一次结束后停留在最后一帧,animation-play-state:paused停留在动画结束一瞬间的帧，即暂停了动画。
@@ -63,7 +63,7 @@ div{
     animation-play-state: paused;
     /*生效
     animation:addHeight 1s linear infinite paused;*/
-    
+
     /*不生效
     animation-play-state: paused;
     animation:addHeight 1s linear infinite;*/
@@ -147,7 +147,7 @@ transition与animation需要明确知道，开始状态和结束状态的具体�
 
 > CSS transform 属性允许你修改CSS视觉格式模型的坐标空间。使用它，元素可以被转换（translate）、旋转（rotate）、缩放（scale）、倾斜（skew）。
 
-像这样不依赖transition与animation使用transform是完全可以的 
+像这样不依赖transition与animation使用transform是完全可以的
 
 ````
 <!DOCTYPE html>
